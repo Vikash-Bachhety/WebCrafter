@@ -5,9 +5,9 @@ function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
 
+  const movieKey = import.meta.env.VITE_MOVIE_KEY
 
   const handleSearch = async () => {
-    const movieKey = import.meta.env.VITE_MOVIE_KEY
     const url = `https://www.omdbapi.com/?apikey=${movieKey}&s=${searchTerm}`;
     const response = await fetch(url);
     const data = await response.json();
