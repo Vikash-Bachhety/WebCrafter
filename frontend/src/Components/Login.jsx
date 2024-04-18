@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const BASE_URL = "https://galaxy-backend-one.vercel.app";
+const BASE_URL = "https://web-crafter-backend.vercel.app/";
 // const BASE_URL = "https://galaxy-backend-49wa.onrender.com"
 
 function Login() {
