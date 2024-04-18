@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./Components.css";
 import axios from "axios";
 
-const BASE_URL = "https://web-crafter-backend.vercel.app/";
+const BASE_URL = "https://web-crafter-backend.vercel.app";
 // const BASE_URL = "https://galaxy-backend-49wa.onrender.com";
 
 
