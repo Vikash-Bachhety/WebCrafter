@@ -75,7 +75,7 @@ function Content() {
       className="bg-sky-950"
       style={{
         display: "flex",
-        minHeight:"100vh",
+        minHeight: "100vh",
         flexWrap: "wrap",
         flexDirection: "column",
         alignItems: "center",
@@ -85,66 +85,26 @@ function Content() {
         paddingBottom: "18vh",
       }}
     >
-      <div
-        className="animate"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: "10px",
-          justifyContent: "center",
-          width: "100%",
-          marginTop: "100px",
-        }}
-      >
+      <div className="animate flex wrap items-center gap-x-4 justify-center w-full mt-24 md:mt-16">
         <input
-          style={{
-            fontSize: "14px",
-            fontWeight: "500 ",
-            color: "black",
-            padding: "5px 20px",
-            width: "300px",
-            border: "2px solid #90a4ad",
-            outline: "none",
-            borderRadius: "25px",
-            alignItems: "center",
-          }}
+          className="text-black text-sm md:text-lg font-medium py-1 px-5 w-56 md:w-72 border-2 border-gray-300 outline-none rounded-full"
           type="search"
           placeholder="search meal"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <img
-          style={{ height: "40px", width: "40px" }}
+          style={{ height: "80px", width: "80px", filter: "invert(1)" }}
           onClick={handleClick}
           src={search}
           alt=""
         />
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          width: "full",
-          height: "auto",
-          padding: "5px",
-          gap: "20px",
-          flexWrap: "wrap",
-          marginTop: "20px",
-          marginBottom: "20px",
-          justifyContent: "space-evenly",
-        }}
-      >
+      <div className="flex flex-wrap justify-center gap-5 md:py-5 md:mt-0 text-white">
         {data.map((item) => (
           <div key={item.idMeal}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-                marginBottom: "10px",
-              }}
-            >
+            <div className="flex justify-evenly center mb-4 text-white">
               <h3
                 style={{
                   fontWeight: "600",
@@ -156,8 +116,16 @@ function Content() {
               </h3>
               <h5>{item.strMeal}</h5>
             </div>
-            <div style={{display:"flex", justifyContent:"center", marginBottom:"5px"}}><StarRating /></div>
-            
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginBottom: "5px",
+              }}
+            >
+              <StarRating />
+            </div>
+
             <img
               style={{
                 height: "300px",
@@ -172,31 +140,14 @@ function Content() {
         ))}
       </div>
 
-      <h1
-        style={{
-          color:"white",
-          textAlign: "center",
-          fontWeight: "800",
-          fontSize: "32px",
-          fontFamily: "sans-serif",
-        }}
-      >
+      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
         Indian
       </h1>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          padding: "10px",
-          width: "94vw",
-          height: "auto",
-        }}
-      >
+      <div className="flex flex-wrap justify-center p-2 w-94vw h-auto">
         {indian.map((meal) => (
           <div
             style={{
-              color:"white",
+              color: "white",
               width: "350px",
               height: "400px",
               display: "flex",
@@ -229,7 +180,7 @@ function Content() {
       </div>
       <h1
         style={{
-          color:"white",
+          color: "white",
           textAlign: "center",
           fontWeight: "800",
           fontSize: "32px",
@@ -251,7 +202,7 @@ function Content() {
         {american.map((meal) => (
           <div
             style={{
-              color:"white",
+              color: "white",
               width: "350px",
               height: "400px",
               display: "flex",
@@ -283,7 +234,7 @@ function Content() {
       </div>
       <h1
         style={{
-          color:"white",
+          color: "white",
           textAlign: "center",
           fontWeight: "800",
           fontSize: "32px",
@@ -305,7 +256,7 @@ function Content() {
         {italian.map((meal) => (
           <div
             style={{
-              color:"white",
+              color: "white",
               width: "350px",
               height: "400px",
               display: "flex",
@@ -337,7 +288,7 @@ function Content() {
       </div>
       <h1
         style={{
-          color:"white",
+          color: "white",
           textAlign: "center",
           fontWeight: "800",
           fontSize: "32px",
@@ -359,7 +310,7 @@ function Content() {
         {french.map((meal) => (
           <div
             style={{
-              color:"white",
+              color: "white",
               width: "350px",
               height: "400px",
               display: "flex",
