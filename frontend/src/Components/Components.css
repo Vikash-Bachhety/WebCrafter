@@ -1,0 +1,152 @@
+.common {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: brightness(0.85);
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  scroll-behavior: smooth;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.content-box {
+    background-color: #0000000f; /* Background color */
+    border: 2px solid #ffffff; /* Border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.83); /* Shadow effect */
+    padding: 24px; /* Padding */
+    width: 100%;
+    height: 200px; /* Width of the content box */
+    max-width: 400px; /* Maximum width */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .content-box:hover {
+    background-color: #ffffff0f; /* Background color */
+    border: 2px solid #000000; /* Border */
+    transform: scale(1.02);
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffdf5d; /* Background color of the badge */
+    color: #151515; /* Text color of the badge */
+    padding: 4px 8px; /* Padding of the badge */
+    font-size: 0.75rem; /* Font size of the badge */
+    border-radius: 4px; /* Border radius of the badge */
+  }
+    
+/* 
+.backGroundAnimate {
+    animation-name: backGroundAnimate;
+    animation-duration: 8s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes backGroundAnimate {
+    0% {
+        background: linear-gradient(45deg, #0b3445, #39091c);
+    }
+    50% {
+        background: linear-gradient(45deg, rgb(6, 56, 69), #450b0b);
+    }
+    100% {
+        background: linear-gradient(45deg, #3c0d1f, #111a4e);
+    }
+}
+*/
+
+.scrollRight {
+    animation-name: scrollRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes scrollRight {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.scrollLeft {
+    animation-name: scrollLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+.animate {
+    animation-name: animate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes animate {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+.dot-animation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .dot-animation-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 10%, transparent 10%);
+    background-size: 12px 12px;
+    opacity: 0.2;
+    animation: moveDots 1s linear infinite forwards;
+    z-index: -1;
+  }
+  
+  @keyframes moveDots {
+    0% {
+      transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(5%);
+        transform: translateX(-5%);
+    }
+  }
+  
+  
