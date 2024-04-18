@@ -85,7 +85,7 @@ function Content() {
         paddingBottom: "18vh",
       }}
     >
-      <div className="animate flex wrap items-center gap-x-4 justify-center w-full mt-24 md:mt-16">
+      <div className="animate flex wrap items-center md:gap-x-4 justify-center w-full mt-24 md:mt-16">
         <input
           className="text-black text-sm md:text-lg font-medium py-1 px-5 w-56 md:w-72 border-2 border-gray-300 outline-none rounded-full"
           type="search"
@@ -128,8 +128,8 @@ function Content() {
 
             <img
               style={{
-                height: "300px",
-                width: "300px",
+                height: "290px",
+                width: "290px",
                 borderRadius: "20px",
                 border: "4px solid",
               }}
@@ -164,8 +164,8 @@ function Content() {
             <StarRating />
             <img
               style={{
-                width: "300px",
-                height: "300px",
+                width: "290px",
+                height: "290px",
                 marginTop: "5px",
                 borderRadius: "20px",
                 objectFit: "cover",
@@ -178,15 +178,7 @@ function Content() {
           </div>
         ))}
       </div>
-      <h1
-        style={{
-          color: "white",
-          textAlign: "center",
-          fontWeight: "800",
-          fontSize: "32px",
-          fontFamily: "sans-serif",
-        }}
-      >
+      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
         American
       </h1>
       <div
@@ -232,15 +224,7 @@ function Content() {
           </div>
         ))}
       </div>
-      <h1
-        style={{
-          color: "white",
-          textAlign: "center",
-          fontWeight: "800",
-          fontSize: "32px",
-          fontFamily: "sans-serif",
-        }}
-      >
+      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
         Italian
       </h1>
       <div
@@ -286,15 +270,7 @@ function Content() {
           </div>
         ))}
       </div>
-      <h1
-        style={{
-          color: "white",
-          textAlign: "center",
-          fontWeight: "800",
-          fontSize: "32px",
-          fontFamily: "sans-serif",
-        }}
-      >
+      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
         French
       </h1>
       <div

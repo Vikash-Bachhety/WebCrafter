@@ -15,7 +15,7 @@ function Home() {
           innovative ways.
         </p>
       </div>
-      <div className="flex flex-wrap gap-x-6 gap-y-6 sm:gap-y-10 justify-between w-full py-3 md:py-6 px-4 mb-24 md:mb-20 lg:px-20 z-1">
+      <div className="flex flex-wrap gap-x-6 gap-y-6 sm:gap-y-10 justify-between w-full py-3 md:py-6 px-4 mb-32 md:mb-20 lg:px-20 z-1">
         <Link to="/Marvel">
           <div className="scrollLeft content-box relative">
             <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">

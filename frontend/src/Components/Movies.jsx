@@ -27,7 +27,7 @@ function Movies() {
 
   return (
     <div className="bg-slate-950 flex flex-col items-center w-full min-h-screen font-serif tracking-wider">
-      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-36 gap-x-4 sm:mt-20 h-24 items-center justify-center">
+      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-32 gap-x-4 sm:mt-20 h-24 items-center justify-center">
         <input
           type="text"
           value={searchTerm}
@@ -42,18 +42,18 @@ function Movies() {
           Search
         </button>
       </div>
-      <div className="w-full h-auto flex flex-wrap justify-center gap-10 pb-28">
+      <div className="w-full h-auto flex flex-wrap justify-center gap-10 pb-36 md:pb-20">
         {movies.map((movie, index) => (
           <div
             onClick={() => showDetails(movie)}
             key={index}
-            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-auto border-gray-400 rounded-md p-4"
+            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-80 border-gray-400 rounded-md p-4"
           >
             {movie.Poster && (
               <img
                 src={movie.Poster}
                 alt={`${movie.Title} Poster`}
-                className="h-52 w-full sm:w-64"
+                className="h-52 sm:h-52 w-full sm:w-64"
               />
             )}
             <h1 className="text-md text-white mt-4 text-center">{movie.Title}</h1>
