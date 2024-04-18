@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://apigalaxy-collection.vercel.app",
+  "https://web-crafter-hub.vercel.app",
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
@@ -109,6 +109,9 @@ const userSchema = mongoose.Schema(
 
 const apiUser = mongoose.model("apiUser", userSchema);
 
+app.get("/", (req,res)=> {
+  res.send(`Welcome to web crafter, visti here: ${"https://web-crafter-hub.vercel.app"}`)
+})
 app.post("/api/register", async (req, res) => {
   const { username, fullname, email, password, dob } = req.body;
 
