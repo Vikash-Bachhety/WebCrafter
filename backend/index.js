@@ -109,9 +109,12 @@ const userSchema = mongoose.Schema(
 
 const User = mongoose.model("User", userSchema);
 
-app.get("/", (req,res)=> {
-  res.send(`Welcome to web crafter, Copy this: ${"https://web-crafter-hub.vercel.app"} and paste in your browser url`)
-})
+app.get("/", (req, res) => {
+  const link = "https://web-crafter-hub.vercel.app";
+  res.send(`Welcome to web crafter, Visit this <a href="${link}">${link}</a> or copy and paste it into your web URL.`);
+});
+
+
 app.post("/api/register", async (req, res) => {
   const { username, fullname, email, password, dob } = req.body;
 

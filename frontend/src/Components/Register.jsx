@@ -63,7 +63,7 @@ function Register() {
           <div className="mb-4">
             <input
               type="text"
-              value={fullname.trim()}
+              value={fullname}
               onChange={(e) => setFullname(e.target.value)}
               placeholder="Full Name"
               required

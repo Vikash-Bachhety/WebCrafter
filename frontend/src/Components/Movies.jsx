@@ -47,7 +47,7 @@ function Movies() {
           <div
             onClick={() => showDetails(movie)}
             key={index}
-            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-96 border-gray-400 rounded-md p-4"
+            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-1/2 border-gray-400 rounded-md p-4"
           >
             {movie.Poster && (
               <img
