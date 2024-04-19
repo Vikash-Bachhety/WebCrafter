@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 const allowedOrigins = [
   "https://localhost:5173",
-  "https://web-crafter-hub.vercel.app",
+  "https://web-crafter-hub.vercel.app"
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
@@ -107,21 +107,21 @@ const userSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const apiUser = mongoose.model("apiUser", userSchema);
+const User = mongoose.model("User", userSchema);
 
 app.get("/", (req,res)=> {
-  res.send(`Welcome to web crafter, visti here: ${"https://web-crafter-hub.vercel.app"}`)
+  res.send(`Welcome to web crafter, Copy this: ${"https://web-crafter-hub.vercel.app"} and paste in your browser url`)
 })
 app.post("/api/register", async (req, res) => {
   const { username, fullname, email, password, dob } = req.body;
 
-  const existingUser = await apiUser.findOne({ email: email });
+  const existingUser = await User.findOne({ email: email });
   if (existingUser) {
     res.json("User already exists, Please Login");
   }
   try {
     const hashPassword = await bcrypt.hash(password, 10);
-    const newUser = await apiUser.create({
+    const newUser = await User.create({
       username,
       fullname,
       email,
@@ -140,7 +140,7 @@ app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await apiUser.findOne({ email: email });
+    const user = await User.findOne({ email: email });
     if (!user) {
       return res.status(404).json("User not found");
     }
@@ -174,7 +174,7 @@ app.post("/api/contact", async (req, res) => {
 
 app.get("/api/data", async (req, res) => {
   try {
-    const user = await apiUser.find({});
+    const user = await User.find({});
     if (!user) {
       return res.status(404).json("User not found");
     }
