@@ -50,7 +50,7 @@ function Login() {
           <div className="mb-4">
             <input
               type="email"
-              value={email}
+              value={email.toLowerCase().trim()}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
@@ -60,7 +60,7 @@ function Login() {
           <div className="mb-4">
             <input
               type="password"
-              value={password}
+              value={password.trim()}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required

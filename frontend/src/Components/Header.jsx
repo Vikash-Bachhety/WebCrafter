@@ -45,7 +45,6 @@ function Header() {
       </Link>
 
       <div className="flex flex-wrap text-xs sm:text-sm md:text-lg justify-center gap-x-4 mx-2 md:gap-x-8">
-        <Links to="Home" text="Home" />
         <Links to="Marvel" text="Marvel" />
         <Links to="Password" text="PasswordGenerator" />
         <Links to="Weather" text="Weather" />

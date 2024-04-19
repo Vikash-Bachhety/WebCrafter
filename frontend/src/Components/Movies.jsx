@@ -42,18 +42,18 @@ function Movies() {
           Search
         </button>
       </div>
-      <div className="w-full h-auto flex flex-wrap justify-center gap-10 pb-36 md:pb-20">
+      <div className="w-full h-auto flex flex-wrap justify-center gap-10 pb-32 md:pb-20">
         {movies.map((movie, index) => (
           <div
             onClick={() => showDetails(movie)}
             key={index}
-            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-80 border-gray-400 rounded-md p-4"
+            className="cursor-pointer font-sans text-left border w-80 sm:w-72 h-96 border-gray-400 rounded-md p-4"
           >
             {movie.Poster && (
               <img
                 src={movie.Poster}
                 alt={`${movie.Title} Poster`}
-                className="h-52 sm:h-52 w-full sm:w-64"
+                className="h-72 w-full sm:w-80"
               />
             )}
             <h1 className="text-md text-white mt-4 text-center">{movie.Title}</h1>

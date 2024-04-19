@@ -53,7 +53,7 @@ function Register() {
           <div className="mb-4">
             <input
               type="text"
-              value={username}
+              value={username.toLowerCase().trim()}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
               required
@@ -63,7 +63,7 @@ function Register() {
           <div className="mb-4">
             <input
               type="text"
-              value={fullname}
+              value={fullname.trim()}
               onChange={(e) => setFullname(e.target.value)}
               placeholder="Full Name"
               required
@@ -73,7 +73,7 @@ function Register() {
           <div className="mb-4">
             <input
               type="email"
-              value={email}
+              value={email.toLowerCase().trim()}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
@@ -83,7 +83,7 @@ function Register() {
           <div className="mb-4">
             <input
               type="password"
-              value={password}
+              value={password.trim()}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required

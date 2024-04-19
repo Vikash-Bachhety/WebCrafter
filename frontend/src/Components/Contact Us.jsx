@@ -42,7 +42,7 @@ function Contact() {
   };
 
   return (
-    <div className="bg-slate-950 flex justify-center bg-center border border-black w-full bg-cover h-[85vh] sm:mt-4 relative z-10 left-0 font-serif tracking-wider">
+    <div className="bg-gray-950 flex justify-center bg-center border border-black w-full bg-cover h-[85vh] sm:mt-4 relative z-10 left-0 font-serif tracking-wider">
       <div className="animate w-3/4 h-3/5 mt-36 sm:w-1/3 sm:h-4/5 bg-white bg-opacity-10 flex justify-center items-center shadow-black shadow-xl rounded-lg sm:mt-14">
         <form
           onSubmit={handleSubmit}

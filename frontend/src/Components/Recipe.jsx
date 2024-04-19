@@ -140,7 +140,7 @@ function Content() {
         ))}
       </div>
 
-      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
+      <h1 className="text-white text-center font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
         Indian
       </h1>
       <div className="flex flex-wrap justify-center p-2 w-94vw h-auto">

@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(cookieParser());
 const allowedOrigins = [
-  "http://localhost:5173",
+  "https://localhost:5173",
   "https://web-crafter-hub.vercel.app",
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));

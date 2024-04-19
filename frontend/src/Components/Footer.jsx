@@ -9,7 +9,6 @@ function Footer() {
   return (
     <div className="backGroundAnimate bg-black flex flex-col md:flex md:justify-center md:items-center flex-wrap fixed bottom-0 left-0 min-w-full h-auto p-4 md:p-8 lg:h-12 z-50 items-center pt-1 tracking-wider">
       <div className="flex flex-wrap text-white md:mx-0 mx-2 gap-x-4 sm:gap-x-2 lg:gap-x-10 text-xs sm:text-md md:text-lg lg:text-xl justify-center">
-        <Links to="Home" text="Home" />
         <Links to="Marvel" text="Marvel" />
         <Links to="Password" text="PasswordGenerator" />
         <Links to="Weather" text="Weather" />
