@@ -21,8 +21,8 @@ function Edit() {
       try {
         if (blogId) {
           const response = await axios.get(
-            // `https://blog-cards.up.railway.app/edit/${blogId}` || 
-            `http://localhost:3000/edit/${blogId}`
+            `https://web-crafter-backend.vercel.app/edit/${blogId}`
+            // `http://localhost:3000/edit/${blogId}`
           );
           const data = response.data;
           setUserData(data);
@@ -74,8 +74,8 @@ function Edit() {
           <div className="flex flex-col gap-2 px-4 justify-center">
           <img
             className="w-full h-60 mt-3 object-cover object-center border border-black rounded-t-lg"
-            // src={`https://blog-cards.up.railway.app/images/${userData.blogPic}`}
-            src={`http://localhost:3000/images/${userData.blogPic}`}
+            src={`https://web-crafter-backend.vercel.app/images/${userData.blogPic}`}
+            // src={`http://localhost:3000/images/${userData.blogPic}`}
             alt="User Profile"
           />
           <span className="text-sm font-semibold">Blog pic</span>
