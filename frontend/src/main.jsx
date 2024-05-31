@@ -12,14 +12,13 @@ import Weather from "./Components/Weather.jsx";
 import Recipe from "./Components/Recipe.jsx";
 import Dictionary from "./Components/Dictionary.jsx";
 import Contact from "./Components/Contact Us.jsx";
-import Password from "./Components/PasswordGenerator.jsx";
 import Login from "./Components/Login.jsx";
-import Register from "./Components/Register.jsx";
+import Signup from "./Components/Signup.jsx";
 import Movies from "./Components/Movies.jsx";
-import Marvel from "./Components/Marvel.jsx";
 import Authenticate from "./Components/Authenticate.jsx";
-// import Location from "./Components/Location.jsx";
-// import Currency from "./Components/Currency.jsx";
+import Blog from "./Components/Blog.jsx";
+import CreateBlog from "./Components/CreateBlog.jsx";
+import Edit from "./Components/Edit.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,16 +30,8 @@ const router = createBrowserRouter([
         element: <Navigate to="/Home" replace />,
       },
       {
-        path: "/Marvel",
-        element: <Marvel />,
-      },
-      {
         path: "/Home",
         element: <Home />,
-      },
-      {
-        path: "/PasswordGenerator",
-        element: <Password />,
       },
       {
         path: "/Weather",
@@ -59,6 +50,18 @@ const router = createBrowserRouter([
         element: <Authenticate Component={Recipe} />,
       },
       {
+        path: "/Blog",
+        element: <Authenticate Component={Blog} />,
+      },
+      {
+        path: "/createBlog",
+        element: <CreateBlog />,
+      },
+      {
+        path: "/edit/:blogId",
+        element: <Edit />,
+      },
+      {
         path: "/Contact Us",
         element: <Authenticate Component={Contact} />,
       },
@@ -67,8 +70,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/Register",
-        element: <Register />,
+        path: "/Signup",
+        element: <Signup />,
       },
       // {
         //   path: "/Location",

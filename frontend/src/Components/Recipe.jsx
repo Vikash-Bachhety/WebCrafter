@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import search from "../assets/search.png";
 import StarRating from "./StarRating";
 
-function Content() {
+function Recipe() {
   const [data, setData] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [indian, setIndian] = useState([]);
-  const [american, setAmerican] = useState([]);
-  const [italian, setItalian] = useState([]);
+  // const [american, setAmerican] = useState([]);
+  // const [italian, setItalian] = useState([]);
   const [french, setFrench] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -22,9 +23,9 @@ function Content() {
 
   useEffect(() => {
     fetchData("indian", setIndian);
-    fetchData("american", setAmerican);
-    fetchData("italian", setItalian);
     fetchData("french", setFrench);
+    // fetchData("american", setAmerican);
+    // fetchData("italian", setItalian);
   }, []);
 
   const dataFetch = async (meal) => {
@@ -32,8 +33,20 @@ function Content() {
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
       );
+      if (!response.ok) {
+        throw new Error("Server is busy, Please try again");
+      }
       const result = await response.json();
-      setData(result.meals);
+      if (!result.meals) {
+        setError("Recipe not found! Search another.");
+        setData([]);
+        setTimeout(() => {
+          setError("");
+        }, 800);
+      } else {
+        setData(result.meals);
+        setError(null);
+      }
     } catch (error) {
       console.log("Error in fetch : " + error);
     }
@@ -71,245 +84,119 @@ function Content() {
   };
 
   return (
-    <div
-      className="bg-sky-950"
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        flexWrap: "wrap",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "auto",
-        color: "black",
-        textShadow: "10px",
-        paddingBottom: "18vh",
-      }}
-    >
-      <div className="animate flex wrap items-center md:gap-x-4 justify-center w-full mt-24 md:mt-16">
+    <div className="bg-sky-950 min-h-screen flex flex-col items-center text-black text-shadow md:flex-wrap md:flex-row md:justify-center md:items-start md:text-white">
+      <div className="animate flex items-center gap-x-4 justify-center w-full mt-24 md:mt-16">
         <input
-          className="text-black text-sm md:text-lg font-medium py-1 px-5 w-56 md:w-72 border-2 border-gray-300 outline-none rounded-full"
+          className="text-sm text-black md:text-lg font-medium py-1 px-5 w-56 md:w-72 border-2 border-gray-300 outline-none rounded-full"
           type="search"
           placeholder="search meal"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <img
-          style={{ height: "80px", width: "80px", filter: "invert(1)" }}
+          className="h-20 w-20 filter invert"
           onClick={handleClick}
           src={search}
           alt=""
         />
       </div>
 
+      {error && <p className="text-red-500">{error}</p>}
       <div className="flex flex-wrap justify-center gap-5 md:py-5 md:mt-0 text-white">
         {data.map((item) => (
           <div key={item.idMeal}>
-            <div className="flex justify-evenly center mb-4 text-white">
-              <h3
-                style={{
-                  fontWeight: "600",
-                  fontSize: "18px",
-                  color: "white",
-                }}
-              >
-                {item.strArea}
-              </h3>
+            <div className="flex justify-evenly items-center mb-4 text-white">
+              <h3 className="font-semibold text-xl">{item.strArea}</h3>
               <h5>{item.strMeal}</h5>
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginBottom: "5px",
-              }}
-            >
+            <div className="flex justify-center mb-2">
               <StarRating />
             </div>
 
             <img
-              style={{
-                height: "290px",
-                width: "290px",
-                borderRadius: "20px",
-                border: "4px solid",
-              }}
+              className="w-72 h-72 mt-2 rounded-lg border-4 border-white object-cover"
               src={item.strMealThumb}
               alt=""
             />
           </div>
         ))}
       </div>
+      
 
-      <h1 className="text-white text-center font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
+      <h1 className="text-center w-full text-white font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
         Indian
       </h1>
-      <div className="flex flex-wrap justify-center p-2 w-94vw h-auto">
+
+      <div className="flex flex-wrap justify-center p-2 w-full md:w-94vw h-auto">
         {indian.map((meal) => (
           <div
-            style={{
-              color: "white",
-              width: "350px",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            className="text-white w-80 h-96 flex flex-col items-center"
             key={meal.idMeal}
           >
-            <h3
-              style={{ fontSize: "18px", fontWeight: "400", padding: "10px" }}
-            >
-              {meal.strMeal}
-            </h3>
+            <h3 className="text-lg font-medium py-2">{meal.strMeal}</h3>
             <StarRating />
             <img
-              style={{
-                width: "290px",
-                height: "290px",
-                marginTop: "5px",
-                borderRadius: "20px",
-                objectFit: "cover",
-                border: "4px solid",
-                boxShadow: "20px",
-              }}
+              className="w-72 h-72 mt-2 rounded-lg border-4 border-white object-cover"
               src={meal.strMealThumb}
               alt={meal.strMeal}
             />
           </div>
         ))}
       </div>
-      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
+
+      {/* <h1 className="text-center text-white  font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
         American
       </h1>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          padding: "10px",
-          width: "auto",
-          height: "auto",
-        }}
-      >
+      <div className="flex flex-wrap justify-center p-2 w-full md:w-94vw h-auto">
         {american.map((meal) => (
           <div
-            style={{
-              color: "white",
-              width: "350px",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            className="text-white w-96 h-96 flex flex-col items-center"
             key={meal.idMeal}
           >
-            <h3
-              style={{ fontSize: "18px", fontWeight: "400", padding: "10px" }}
-            >
-              {meal.strMeal}
-            </h3>
+            <h3 className="text-lg font-medium py-2">{meal.strMeal}</h3>
             <StarRating />
             <img
-              style={{
-                width: "300px",
-                height: "300px",
-                marginTop: "5px",
-                borderRadius: "20px",
-                objectFit: "cover",
-                border: "4px solid",
-              }}
+              className="w-72 h-72 mt-2 rounded-lg border-4 border-white object-cover"
               src={meal.strMealThumb}
               alt={meal.strMeal}
             />
           </div>
         ))}
       </div>
-      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
+
+      <h1 className="text-center text-white  font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
         Italian
       </h1>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          padding: "10px",
-          width: "auto",
-          height: "auto",
-        }}
-      >
+      <div className="flex flex-wrap justify-center p-2 w-full md:w-94vw h-auto">
         {italian.map((meal) => (
           <div
-            style={{
-              color: "white",
-              width: "350px",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            className="text-white w-96 h-96 flex flex-col items-center"
             key={meal.idMeal}
           >
-            <h3
-              style={{ fontSize: "18px", fontWeight: "400", padding: "10px" }}
-            >
-              {meal.strMeal}
-            </h3>
+            <h3 className="text-lg font-medium py-2">{meal.strMeal}</h3>
             <StarRating />
             <img
-              style={{
-                width: "300px",
-                height: "300px",
-                marginTop: "5px",
-                borderRadius: "20px",
-                objectFit: "cover",
-                border: "4px solid",
-              }}
+              className="w-72 h-72 mt-2 rounded-lg border-4 border-white object-cover"
               src={meal.strMealThumb}
               alt={meal.strMeal}
             />
           </div>
         ))}
-      </div>
-      <h1 className="text-white text-center font-bold text-3xl md:text-4xl -mt-2 md:mt-2 font-sans">
+      </div> */}
+
+      <h1 className="text-center text-white  font-bold text-3xl md:text-4xl mt-3 md:mt-2 font-sans">
         French
       </h1>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          padding: "10px",
-          width: "auto",
-          height: "auto",
-        }}
-      >
+      <div className="flex flex-wrap justify-center p-2 w-full md:w-94vw mb-20 h-auto">
         {french.map((meal) => (
           <div
-            style={{
-              color: "white",
-              width: "350px",
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            className="text-white w-80 h-96 flex flex-col items-center"
             key={meal.idMeal}
           >
-            <h3
-              style={{ fontSize: "18px", fontWeight: "400", padding: "10px" }}
-            >
-              {meal.strMeal}
-            </h3>
+            <h3 className="text-lg font-medium py-2">{meal.strMeal}</h3>
             <StarRating />
             <img
-              style={{
-                width: "300px",
-                height: "300px",
-                marginTop: "5px",
-                borderRadius: "20px",
-                objectFit: "cover",
-                border: "4px solid",
-              }}
+              className="w-72 h-72 mt-2 rounded-lg border-4 border-white object-cover"
               src={meal.strMealThumb}
               alt={meal.strMeal}
             />
@@ -320,4 +207,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default Recipe;

@@ -27,7 +27,7 @@ function Movies() {
 
   return (
     <div className="bg-slate-950 flex flex-col items-center w-full min-h-screen font-serif tracking-wider">
-      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-32 gap-x-4 sm:mt-20 h-24 items-center justify-center">
+      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-32 gap-x-4 sm:mt-28 md:mt-20 h-24 items-center justify-center">
         <input
           type="text"
           value={searchTerm}
@@ -36,7 +36,7 @@ function Movies() {
           className="border border-gray-400 rounded-md text-xl py-1 px-4 w-2/3 sm:w-2/3 mb-4 sm:mb-10 focus:outline-none"
         />
         <button
-          className="bg-green-500 hover:bg-green-700 text-white border border-gray-400 rounded-md text-xl py-1 px-4 w-32 sm:w-40 mb-10"
+          className="bg-teal-600 hover:bg-teal-700 text-white rounded-md text-xl py-1 px-4 w-28 sm:w-32 mb-10"
           onClick={handleSearch}
         >
           Search

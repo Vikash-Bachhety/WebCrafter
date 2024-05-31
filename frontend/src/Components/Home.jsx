@@ -16,28 +16,7 @@ function Home() {
         </p>
       </div>
       <div className="flex flex-wrap gap-x-8 gap-y-6 sm:gap-y-10 justify-center w-full py-3 md:py-6 px-4 mb-28 md:mb-20 lg:px-20 z-1">
-        <Link to="/Marvel">
-          <div className="scrollLeft content-box relative">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
-              Marvel Universe
-            </h2>
-            <p className="text-base lg:text-lg text-gray-100">
-              Dive into the epic world of Marvel superheroes and villains.
-              Discover iconic characters, and their stories.
-            </p>
-          </div>
-        </Link>
-        <Link to="/PasswordGenerator">
-          <div className="scrollLeft content-box relative">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
-              Password Generator
-            </h2>
-            <p className="text-base lg:text-lg text-gray-100">
-              Generate strong and secure passwords for your accounts. include
-              lowercase, uppercase letters, special characters and numbers.
-            </p>
-          </div>
-        </Link>
+
         <Link to="/Weather">
           <div className="scrollLeft content-box relative">
             <span className="badge">Log In</span>

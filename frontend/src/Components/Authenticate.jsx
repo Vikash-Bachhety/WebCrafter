@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function Authenticate(props) {
-  const [errorMessage, setErrorMessage] = useState("");
-  const { Component } = props;
+function Authenticate({ Component }) {
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      setErrorMessage("Not Authoried, Please Login !");
-      setTimeout(() => {
-        navigate("/Login");
-      }, 800);
+      toast.warning("Not Authoried, Please Login !");
+      navigate("/Login")
     }
-  }, [navigate]);
+  }, []);
 
   return (
     <div>
-      {errorMessage && <div className=" bg-rose-200 text-red-950 border-2 tracking-wide border-rose-300 rounded-xl w-64  p-1 mt-10 mx-auto">{errorMessage}</div>}
-      {!errorMessage && <Component />}
+      <Component />
     </div>
   );
 }

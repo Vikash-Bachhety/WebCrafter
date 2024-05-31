@@ -8,9 +8,8 @@ import Haze from "../assets/weather Images/haze.png";
 import Fog from "../assets/weather Images/fog.png";
 import Smoke from "../assets/weather Images/smoke.png";
 
-
 function Weather() {
-  const weatherKey = import.meta.env.VITE_WEATHER_KEY
+  const weatherKey = import.meta.env.VITE_WEATHER_KEY;
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
 
@@ -28,6 +27,7 @@ function Weather() {
       }
       const data = await response.json();
       setWeatherData(data);
+      console.log(data);
       resultRef.current.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
       console.error(error);
@@ -56,25 +56,15 @@ function Weather() {
   };
 
   return (
-    <div className="bg-black flex flex-col sm:flex-row bg-center w-full bg-cover sm:h-screen mt-8 sm:pt-20 sm:fixed z-10 left-0 font-serif tracking-wider">
-      <div className="scrollLeft sm:w-1/4 w-11/12 h-32 sm:h-72 sm:p-4 mt-16 sm:mt-24 mb-3 sm:mb-28 flex flex-col sm:gap-y-4 mx-4 sm:m-24 bg-white rounded-lg bg-opacity-5 text-white border-black border-2 drop-shadow-sm">
-        <h2 className="text-sm sm:text-2xl font-bold">Weather</h2>
-        <p className="text-sm sm:text-lg sm:leading-relaxed sm:tracking-wider">
-          Stay Ahead of the Elements Stay informed and prepared with real-time
-          weather updates from API Galaxy. Whether you're planning outdoor
-          activities, traveling, or simply curious about the forecast, we've got
-          you covered.
-        </p>
-      </div>
-
-      <div className="animate h-52 w-5/6 sm:w-1/4 sm:h-3/4 drop-shadow-md ml-8 sm:ml-0 flex flex-col mb-3 sm:mb-0 sm:mt-0 sm:hover:scale-95 transition-all duration-1000 bg-white rounded-lg bg-opacity-5 pt-2 sm:py-6 border-x-2 border-y-4 border-white">
-        <h1 className="font-bold text-sm sm:text-2xl sm:mb-2 font-sans text-white">
+    <div className="bg-gray-950 bg-center w-full bg-cover min-h-[90vh] pt-20 sm:pt-14 px-5 sm:fixed z-10 left-0 font-serif tracking-wider">
+      <div className="h-[530px] sm:h-[450px] w-[320px] sm:w-11/12 md:w-3/4 xl:w-1/2 md:h-[480px] xl:h-[500px] drop-shadow-md mx-auto flex flex-col mb-3 mt-8 sm:mt-20 md:mt-8 xl:mt-6 transition-all duration-1000 bg-white rounded-lg bg-opacity-5 pt-2 sm:py-6 border-x-2 border-y-4 border-white">
+        <h1 className="font-bold text-xl sm:text-2xl sm:mb-2 mt-5 sm:mt-0 font-sans text-white">
           Weather App
         </h1>
         <div className="flex flex-col w-full h-5/6 items-center">
-          <div className="flex gap-x-2 sm:w-11/12 sm:h-10 m-4">
+          <div className="flex justify-center w-full sm:h-10 m-4 gap-5 sm:gap-10 px-2">
             <input
-              className="sm:w-4/5 w-2/3 h-6 sm:h-8 rounded-xl text-md sm:text-lg pl-5 bg-white tracking-wide focus:outline-none"
+              className="w-1/2 sm:w-2/3 h-8 rounded-xl text-md sm:text-lg pl-5 bg-white tracking-wide focus:outline-none"
               ref={inputRef}
               placeholder="Enter City"
               type="text"
@@ -83,7 +73,7 @@ function Weather() {
               onBlur={(e) => setCity(e.target.value.trim())}
             />
             <button
-              className="w-28 h-6 sm:h-8 rounded-xl bg-red-500 text-white border border-white font-semibold"
+              className="w-20 sm:w-28 h-8 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold"
               onClick={handleSearch}
             >
               Search
@@ -97,46 +87,38 @@ function Weather() {
           >
             {weatherData && (
               <>
-                <div className="flex justify-center w-full h-2/3">
+                <div className="flex justify-center w-full h-2/3 my-6 sm:my-0">
                   <img
-                    className="h-6 w-6 sm:h-24 sm:w-24"
+                    className="h-20 w-20 md:h-24 md:w-24"
                     id="condition"
                     src={getWeatherIcon(weatherData.weather[0].main)}
                     alt="condition"
                   />
                 </div>
-                <div className="flex flex-wrap sm:w-[350px] sm:h-[450px] sm:gap-y-4 sm:mt-5 pl-2 justify-around items-center sm:leading-relaxed font-sans tracking-wider text-sm sm:text-lg ">
-                  <p className="text-justify w-36 h-1/4 text-white">
-                    City: {weatherData.name}
+                <div className="flex flex-wrap w-full mx-auto sm:gap-y-4 justify-center items-center sm:leading-relaxed font-sans tracking-wider text-lg sm:text-xl ">
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>City</b> : {weatherData.name}
                   </p>
-                  <p className="text-justify w-36 h-1/4 text-white">
-                    Humidity: {weatherData.main.humidity}
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>Humidity</b> : {weatherData.main.humidity}
                   </p>
-                  <p className="text-justify w-36 h-1/4 text-white">
-                    Weather: {weatherData.weather[0].description}
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>Weather</b> : {weatherData.weather[0].description}
                   </p>
-                  <p className="text-justify w-36 h-1/4 text-white">
-                    Temperature: {weatherData.main.temp} °C
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>Temperature</b> : {weatherData.main.temp} °C
                   </p>
-                  <p className="text-justify w-36 h-1/4 mt-3 text-white">
-                    Wind-Speed: {weatherData.wind.speed}
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>Pressure</b> : {weatherData.main.pressure}
+                  </p>
+                  <p className="text-justify w-60 h-1/4 text-gray-300">
+                    <b>Wind-Speed</b> : {weatherData.wind.speed}
                   </p>
                 </div>
               </>
             )}
           </div>
         </div>
-      </div>
-
-      <div className="scrollRight sm:w-1/4 w-11/12 h-28 sm:h-72 sm:p-4  mb-28 flex flex-col sm:gap-y-4 mx-4 sm:m-24 bg-white rounded-lg bg-opacity-5 text-white border-black border-2 drop-shadow-sm">
-        <h2 className="text-sm sm:text-2xl font-bold">
-          Location-Based Weather
-        </h2>
-        <p className="text-sm sm:text-lg sm:leading-relaxed sm:tracking-wider">
-          Whether you're at home or exploring a new destination, our
-          location-based weather feature provides you with accurate forecasts
-          tailored to your current location.
-        </p>
       </div>
     </div>
   );

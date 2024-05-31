@@ -1,20 +1,25 @@
-import { Outlet } from 'react-router-dom'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-import './App.css'
-import Movies from "./Components/Movies";
-import Pokemon from './Components/Marvel';
-
+import { Outlet } from "react-router-dom";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import "./App.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-
   return (
     <>
-    <Header/>
-    <Outlet/>
-    <Footer/>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        newestOnTop={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        theme="dark"
+      />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
