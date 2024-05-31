@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(cookieParser());
-const allowedOrigins = ["https://web-crafter-hub.vercel.app", "http://localhost:5173"];
+const allowedOrigins = [
+  "https://web-crafter-hub.vercel.app",
+  "http://localhost:5173",
+];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 const storage = multer.diskStorage({
@@ -249,7 +252,9 @@ app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
       blogPic: req.file.filename.toLowerCase(),
     });
 
-    await CrafterUser.findByIdAndUpdate(userId, {$push: { blogs: newBlog._id } });
+    await CrafterUser.findByIdAndUpdate(userId, {
+      $push: { blogs: newBlog._id },
+    });
 
     res.status(200).send(newBlog);
   } catch (error) {

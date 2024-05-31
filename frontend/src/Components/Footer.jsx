@@ -8,7 +8,7 @@ import gmail from "../assets/icons/gmail.png";
 function Footer() {
   return (
     <div className="bg-black flex justify-center items-center gap-4 fixed bottom-0 left-0 min-w-full h-auto p-4 md:p-8 lg:h-12 z-50 pt-1 tracking-wider">
-         <div className="text-white text-md">
+      <div className="text-white text-md">
         <Links to="Home" text="Home" />
       </div>
       <div className="hidden sm:flex gap-6 items-center justify-center mr-5 md:mr-0">
@@ -40,9 +40,9 @@ function Footer() {
             alt=""
           />
         </a>
-        <div className="text-white text-md">
-        <Links to="Contact" text="Contact Us" />
       </div>
+      <div className="text-white text-md">
+        <Links to="Contact" text="Contact Us" />
       </div>
     </div>
   );
