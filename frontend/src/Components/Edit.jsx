@@ -59,7 +59,6 @@ function Edit() {
       const data = response.data;
       // console.log(data);
       toast.success("Blog Successfully Updated");
-      // console.log(data);
       navigate("/Blog");
     } catch (error) {
       console.log(error);

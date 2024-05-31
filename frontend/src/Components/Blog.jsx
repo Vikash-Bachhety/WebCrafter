@@ -28,7 +28,7 @@ function Blog() {
     async function fetchData() {
       try {
         const token = localStorage.getItem("token");
-        console.log(token);
+        // console.log(token);
         const headers = {
           Authorization: `${token}`,
         };
@@ -38,7 +38,7 @@ function Blog() {
           { headers }
         );
         const userData = response.data;
-        console.log(userData);
+        // console.log(userData);
         setIsLoading(false);
         setUserData(userData);
       } catch (error) {
