@@ -84,7 +84,8 @@ function Blog() {
       <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-0 pb-4 border-b border-slate-600">
         <div className="light flex items-end gap-4 w-auto py-2 mt-2 px-2 rounded-lg bg-slate-900 cursor-pointer">
           <img
-            src={userData.profilePic}
+            src={`https://webcrafter-production.up.railway.app/images/${userData.profilePic}`}
+
             className="w-10 h-10 rounded-full object-cover"
             alt="profilePic"
           />
