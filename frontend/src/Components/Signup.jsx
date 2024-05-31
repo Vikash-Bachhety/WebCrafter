@@ -19,7 +19,7 @@ function Signup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://blog-cards.up.railway.app/api/signup",
+        "https://web-crafter-backend.vercel.app/api/signup",
         // "http://localhost:3000/api/signup",
         input
       );

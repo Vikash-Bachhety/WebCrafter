@@ -5,7 +5,7 @@ import "./Login.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BASE_URL = "https://blog-cards.up.railway.app";
+const BASE_URL = "https://web-crafter-backend.vercel.app";
 // const BASE_URL = "http://localhost:3000";
 
 function Login() {

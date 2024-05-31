@@ -52,7 +52,7 @@ function Edit() {
       } 
       
       const response = await axios.patch(
-        `https://blog-cards.up.railway.app/update/${blogID}`,
+        `https://web-crafter-backend.vercel.app/update/${blogID}`,
         // `http://localhost:3000/update/${blogID}`,
         formData
       );
