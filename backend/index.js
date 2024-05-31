@@ -138,7 +138,7 @@ const blogschema = new mongoose.Schema(
     },
     author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "CrafterUser",
     },
     title: String,
     city: String,
