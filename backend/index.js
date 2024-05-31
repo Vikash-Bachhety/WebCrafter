@@ -18,10 +18,11 @@ const allowedOrigins = [
   // "http://localhost:5173",
 ];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -34,7 +35,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.use(express.static(path.join(__dirname, "public")));
 
 mongoose
   .connect(MONGODB_URI)
