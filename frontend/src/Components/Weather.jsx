@@ -100,7 +100,7 @@ function Weather() {
                     <b>City</b> : {weatherData.name}
                   </p>
                   <p className="text-justify w-60 h-1/4 text-gray-300">
-                    <b>Humidity</b> : {weatherData.main.humidity}
+                    <b>Humidity</b> : {weatherData.main.humidity} %
                   </p>
                   <p className="text-justify w-60 h-1/4 text-gray-300">
                     <b>Weather</b> : {weatherData.weather[0].description}
@@ -112,7 +112,7 @@ function Weather() {
                     <b>Pressure</b> : {weatherData.main.pressure}
                   </p>
                   <p className="text-justify w-60 h-1/4 text-gray-300">
-                    <b>Wind-Speed</b> : {weatherData.wind.speed}
+                    <b>Wind-Speed</b> : {weatherData.wind.speed} m/s
                   </p>
                 </div>
               </>

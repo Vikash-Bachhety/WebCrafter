@@ -32,7 +32,8 @@ function CreateBlog() {
       formData.append("userId", userId);
 
       const response = await axios.post( 
-        "https://webcrafter-production.up.railway.app/createBlog" || "http://localhost:3000/createBlog",
+        "https://webcrafter-production.up.railway.app/createBlog",
+        // "http://localhost:3000/createBlog",
         formData,
         {
           headers: {
