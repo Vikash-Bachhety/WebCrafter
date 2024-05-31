@@ -44,12 +44,13 @@ function Edit() {
       formData.append("city", city);
       formData.append("content", content);
       
-      if (title === "" && city === "" && content === "") {
+       if(blogPic === ""){
+        toast.info("Upload Blog pic first")
+      }
+      if (blogPic === "" && title === "" && city === "" && content === "") {
         toast.info("No changes made");
         return;
-      } else if(blogPic === ""){
-        toast.info("Upload Blog pic first")
-      } 
+      }
       
       const response = await axios.patch(
         `https://webcrafter-production.up.railway.app/update/${blogID}`,
