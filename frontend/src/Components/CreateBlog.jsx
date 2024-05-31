@@ -32,7 +32,7 @@ function CreateBlog() {
       formData.append("userId", userId);
 
       const response = await axios.post( 
-        "https://web-crafter-backend.vercel.app/createBlog",
+        "https://webcrafter-production.up.railway.app/createBlog",
         // "http://localhost:3000/createBlog",
         formData,
         {

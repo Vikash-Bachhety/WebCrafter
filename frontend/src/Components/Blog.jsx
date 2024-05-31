@@ -33,7 +33,7 @@ function Blog() {
           Authorization: `${token}`,
         };
         const response = await axios.get(
-          `https://web-crafter-backend.vercel.app/profile/${userId}`,
+          `https://webcrafter-production.up.railway.app/profile/${userId}`,
           // `http://localhost:3000/profile/${userId}`,
           { headers }
         );
@@ -63,7 +63,7 @@ function Blog() {
       const confirmDelete = window.confirm("Are you want to delete this blog?");
       if (confirmDelete) {
         const response = await axios.delete(
-          `https://web-crafter-backend.vercel.app/delete/${blogId}`
+          `https://webcrafter-production.up.railway.app/delete/${blogId}`
           // `http://localhost:3000/delete/${blogId}`
         );
         setUserData((prevUserData) => ({
@@ -115,7 +115,7 @@ function Blog() {
                 >
                   <img
                     className="w-full h-60 p-1 object-cover object-center rounded-lg"
-                    src={`https://web-crafter-backend.vercel.app/images/${blog.blogPic}`}
+                    src={`https://webcrafter-production.up.railway.app/images/${blog.blogPic}`}
                     // src={`http://localhost:3000/images/${blog.blogPic}`}
                     alt="Blog"
                   />

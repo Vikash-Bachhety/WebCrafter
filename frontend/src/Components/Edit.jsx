@@ -21,7 +21,7 @@ function Edit() {
       try {
         if (blogId) {
           const response = await axios.get(
-            `https://web-crafter-backend.vercel.app/edit/${blogId}`
+            `https://webcrafter-production.up.railway.app/edit/${blogId}`
             // `http://localhost:3000/edit/${blogId}`
           );
           const data = response.data;
@@ -52,7 +52,7 @@ function Edit() {
       } 
       
       const response = await axios.patch(
-        `https://web-crafter-backend.vercel.app/update/${blogID}`,
+        `https://webcrafter-production.up.railway.app/update/${blogID}`,
         // `http://localhost:3000/update/${blogID}`,
         formData
       );
@@ -73,7 +73,7 @@ function Edit() {
           <div className="flex flex-col gap-2 px-4 justify-center">
           <img
             className="w-full h-60 mt-3 object-cover object-center border border-black rounded-t-lg"
-            src={`https://web-crafter-backend.vercel.app/images/${userData.blogPic}`}
+            src={`https://webcrafter-production.up.railway.app/images/${userData.blogPic}`}
             // src={`http://localhost:3000/images/${userData.blogPic}`}
             alt="User Profile"
           />
