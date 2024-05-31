@@ -257,7 +257,7 @@ app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
     res.status(200).send(newBlog);
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error creating blog");
+    res.status(500).send(error);
   }
 });
 
