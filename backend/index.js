@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(cookieParser());
-const allowedOrigins = ["https://web-crafter-hub.vercel.app", "http://localhost:5173"];
+const allowedOrigins = ["https://web-crafter-hub.vercel.app"];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 const storage = multer.diskStorage({
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 mongoose
   .connect(MONGODB_URI)

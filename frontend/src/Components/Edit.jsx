@@ -52,8 +52,8 @@ function Edit() {
       } 
       
       const response = await axios.patch(
-        `https://webcrafter-production.up.railway.app/update/${blogID}`,
-        // `http://localhost:3000/update/${blogID}`,
+        // `https://webcrafter-production.up.railway.app/update/${blogID}`,
+        `http://localhost:3000/update/${blogID}`,
         formData
       );
       const data = response.data;
