@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(cookieParser());
-const allowedOrigins = ["https://web-crafter-hub.vercel.app"];
+const allowedOrigins = ["https://web-crafter-hub.vercel.app", "http://localhost:5173"];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 const storage = multer.diskStorage({
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(MONGODB_URI)
@@ -227,14 +227,14 @@ app.get("/profile/:id", async (req, res) => {
   }
 });
 
-app.post("/createBlog", async (req, res) => {
+app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
   const { title, city, content } = req.body;
   // console.log(req.body);
   const userId = req.body.userId;
 
-  // if (!req.file) {
-  //   return res.status(400).send("No file uploaded.");
-  // }
+  if (!req.file) {
+    return res.status(400).send("No file uploaded.");
+  }
 
   try {
     let user = await CrafterUser.findById(userId);
@@ -246,7 +246,7 @@ app.post("/createBlog", async (req, res) => {
       author: userId,
       city,
       content,
-      // blogPic: req.file.filename.toLowerCase(),
+      blogPic: req.file.filename.toLowerCase(),
     });
 
     await CrafterUser.findByIdAndUpdate(userId, {$push: { blogs: newBlog._id } });
