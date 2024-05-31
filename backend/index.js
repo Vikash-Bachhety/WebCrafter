@@ -13,28 +13,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(cookieParser());
-const allowedOrigins = [
-  "https://web-crafter-hub.vercel.app",
-  // "http://localhost:5173",
-];
+const allowedOrigins = ["https://web-crafter-hub.vercel.app", "http://localhost:5173"];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
-app.use(express.static(path.join(__dirname, "public")));
-
-const MONGODB_URI = process.env.MONGODB_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
-const PORT = process.env.PORT;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/images/");
   },
   filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-image_profile_pic-${file.originalname}`);
+    cb(null, `${Date.now()}-blog-${file.originalname}`);
   },
 });
 
 const upload = multer({ storage });
 
+app.use(express.static(path.join(__dirname, "public")));
+
+const MONGODB_URI = process.env.MONGODB_URI;
+const JWT_SECRET = process.env.JWT_SECRET;
+const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(MONGODB_URI)
@@ -231,9 +228,9 @@ app.get("/profile/:id", async (req, res) => {
 });
 
 app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
-  const { title, city, content, userId } = req.body;
+  const { title, city, content } = req.body;
   // console.log(req.body);
-  // console.log(req.file);
+  const userId = req.body.userId;
 
   if (!req.file) {
     return res.status(400).send("No file uploaded.");
