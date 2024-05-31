@@ -33,8 +33,8 @@ function Blog() {
           Authorization: `${token}`,
         };
         const response = await axios.get(
-          `https://blog-cards.up.railway.app/profile/${userId}`
-          // `http://localhost:3000/profile/${userId}`
+          `https://blog-cards.up.railway.app/profile/${userId}`,
+          // `http://localhost:3000/profile/${userId}`,
           { headers }
         );
         const userData = response.data;
