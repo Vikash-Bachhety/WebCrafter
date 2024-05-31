@@ -63,7 +63,7 @@ function Header() {
       ) : (
         <button
           onClick={handleRegister}
-          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-2 py-2 items-center md:mt-0 w-24 h-6 md:w-28 md:h-8 rounded-md md:mr-10"
+          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-6 py-2 items-center md:mt-0 w-24 h-6 md:w-28 md:h-8 rounded-md md:mr-10"
         >
           Sign Up
         </button>
