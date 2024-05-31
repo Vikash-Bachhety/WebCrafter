@@ -22,7 +22,7 @@ function CreateBlog() {
       const token = localStorage.getItem("token");
       const decodedToken = jwtDecode(token);
       const userId = decodedToken.userID;
-      console.log(userId);
+      // console.log(userId);
 
       const formData = new FormData();
       formData.append("blogFile", input.blogPic);
@@ -30,8 +30,6 @@ function CreateBlog() {
       formData.append("city", input.city);
       formData.append("content", input.content);
       formData.append("userId", userId);
-
-      console.log(formData);
 
       const response = await axios.post( 
         "https://webcrafter-production.up.railway.app/createBlog",

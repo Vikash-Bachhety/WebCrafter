@@ -37,10 +37,10 @@ function Blog() {
           // `http://localhost:3000/profile/${userId}`,
           { headers }
         );
-        const userData = response.data;
-        // console.log(userData);
+        const data = response.data;
+        console.log(data);
         setIsLoading(false);
-        setUserData(userData);
+        setUserData(data);
       } catch (error) {
         console.log("Error fetching user data:", error);
         if (error.response && error.response.status === 401) {
