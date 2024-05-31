@@ -63,7 +63,7 @@ function Contact() {
               onChange={(e) => setName(e.target.value)}
               onBlur={(e)=> setName(e.target.value.trim())}
               required
-              className="shadow appearance-none border rounded w-full sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-1 sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-2">
@@ -81,7 +81,7 @@ function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               onBlur={(e)=> setEmail(e.target.value.trim())}
               required
-              className="shadow appearance-none border rounded w-full sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-1 sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-2">
@@ -99,7 +99,7 @@ function Contact() {
               onChange={(e) => setSubject(e.target.value)}
               onBlur={(e)=> setSubject(e.target.value.trim())}
               required
-              className="shadow appearance-none border rounded w-full sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-1 sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
           <div className="mb-2">
@@ -117,7 +117,7 @@ function Contact() {
               onBlur={(e)=> setMessage(e.target.value.trim())}
               rows="4"
               required
-              className="shadow appearance-none border rounded w-full sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full sm:py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none"
             ></textarea>
           </div>
           <div className="flex items-center mb-6 justify-between">

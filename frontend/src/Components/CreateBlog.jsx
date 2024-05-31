@@ -116,7 +116,7 @@ function CreateBlog() {
             rows="4"
             placeholder="Write your content"
             required
-            className="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500 resize-none"
           />
 
           <input
