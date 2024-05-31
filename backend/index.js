@@ -252,9 +252,7 @@ app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
       blogPic: req.file.filename.toLowerCase(),
     });
 
-    await CrafterUser.findByIdAndUpdate(userId, {
-      $push: { blogs: newBlog._id },
-    });
+    await CrafterUser.findByIdAndUpdate(userId, {$push: { blogs: newBlog._id } });
 
     res.status(200).send(newBlog);
   } catch (error) {
