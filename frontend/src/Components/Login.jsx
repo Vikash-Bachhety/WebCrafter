@@ -45,11 +45,11 @@ function Login() {
   };
 
   return (
-    <div className="min-h-[90vh] flex items-center justify-center bg-black py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-auto px-6 py-4 bg-slate-200 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 flex flex-col items-center">
+    <div className="min-h-[90vh] flex items-center justify-center bg-black py-12 mx-auto sm:px-6 lg:px-8">
+      <div className="w-11/12 sm:w-auto px-2 sm:px-6 py-4 bg-slate-200 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 flex flex-col items-center">
         <h2 className="text-2xl text-gray-100 font-semibold">Login</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4 w-96 text-left">
+          <div className="mb-4 w-auto text-left">
             <label
               htmlFor="fullName"
               className="text-gray-100 tracking-wide"

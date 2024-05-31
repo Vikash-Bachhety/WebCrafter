@@ -53,10 +53,10 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-[90vh] flex items-center justify-center bg-black py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-auto px-6 py-4 bg-slate-200 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 flex flex-col items-center">
+    <div className="min-h-[90vh] flex items-center justify-center bg-black py-12 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full sm:w-auto px-4 sm:px-6 py-4 mt-14 md:mt-0 bg-slate-200 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 flex flex-col items-center">
         <h2 className="text-2xl text-gray-100 font-semibold">Sign Up</h2>
-        <form className="flex flex-col gap-1" onSubmit={handleSubmit}>
+        <form className="w-full mx-auto flex flex-col gap-1" onSubmit={handleSubmit}>
           <label
             htmlFor="fullName"
             className="text-gray-100 text-left tracking-wide"
@@ -69,7 +69,7 @@ function Signup() {
             type="text"
             autoComplete="fullName"
             required
-            className="w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
+            className="w-full sm:w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
             placeholder="Full Name"
             value={input.fullName}
             onChange={(e) => setInput({ ...input, fullName: e.target.value })}
@@ -87,7 +87,7 @@ function Signup() {
             type="email"
             autoComplete="email"
             required
-            className="w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
+            className="w-full sm:w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
             placeholder="Email Address"
             value={input.email}
             onChange={(e) => setInput({ ...input, email: e.target.value })}
@@ -105,7 +105,7 @@ function Signup() {
             type="password"
             autoComplete="new-password"
             required
-            className="w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
+            className="w-full sm:w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
             placeholder="Password"
             value={input.password}
             onChange={(e) => setInput({ ...input, password: e.target.value })}
@@ -123,7 +123,7 @@ function Signup() {
             type="password"
             autoComplete=""
             required
-            className="w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
+            className="w-full sm:w-96 p-2 mb-2 text-black rounded-md outline-none focus:outline-blue-900"
             placeholder="confirm password"
             value={input.confirm_password}
             onChange={(e) =>
@@ -165,7 +165,7 @@ function Signup() {
             className="w-36 py-1 mx-auto mt-5 bg-blue-600 hover:bg-blue-500 text-gray-100 text-lg rounded-md tracking-wider"
           />
 
-          <div className="flex justify-center w-96 gap-1 mt-2">
+          <div className="flex justify-center w-full gap-1 mt-2">
             <span className="text-gray-500">Already have an account?</span>
             <Link to="/Login" className="text-sky-700 hover:text-sky-500">
               Login here

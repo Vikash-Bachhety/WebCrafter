@@ -64,7 +64,7 @@ function Weather() {
         <div className="flex flex-col w-full h-5/6 items-center">
           <div className="flex justify-center w-full sm:h-10 m-4 gap-5 sm:gap-10 px-2">
             <input
-              className="w-1/2 sm:w-2/3 h-8 rounded-xl text-md sm:text-lg pl-5 bg-white tracking-wide focus:outline-none"
+              className="w-1/2 sm:w-2/3 h-8 rounded-xl text-md sm:text-lg pl-3 bg-white tracking-wide focus:outline-none"
               ref={inputRef}
               placeholder="Enter City"
               type="text"
