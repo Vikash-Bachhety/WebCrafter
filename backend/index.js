@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const JWT_SECRET = process.env.JWT_SECRET;
-const PORT = process.env.PORT || 3000;
+const PORT = 3000 || process.env.PORT;
 
 mongoose
   .connect(MONGODB_URI)
@@ -249,7 +249,7 @@ app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
       author: userId,
       city,
       content,
-      blogPic: req.file.filename.toLowerCase(),
+      blogPic: req.file.filename,
     });
 
     await CrafterUser.findByIdAndUpdate(userId, {
@@ -280,7 +280,7 @@ app.patch("/update/:id", upload.single("blogFile"), async (req, res) => {
     const blogId = req.params.id;
     const { title, city, content } = req.body;
     const blogPic = req.file.filename;
-    console.log(req.file);
+    // console.log(req.file);
 
     if (!blogPic && !title && !city && !content) {
       return res.status(400).send("No fields provided for update");
@@ -305,7 +305,6 @@ app.patch("/update/:id", upload.single("blogFile"), async (req, res) => {
     if (!updatedblog) {
       return res.status(404).send("User not found");
     }
-
     res.send(updatedblog);
   } catch (error) {
     console.log("Error in profile route:", error);

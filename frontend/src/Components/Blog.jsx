@@ -81,10 +81,10 @@ function Blog() {
 
   return (
     <div className="flex flex-wrap justify-center w-full gap-y-10 gap-x-20 py-10 min-h-[90vh] bg-gray-900 border">
-      <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-0 pb-4 border-b border-slate-600">
+      <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-0 pb-5 border-b border-slate-600">
         <div className="light flex items-end gap-4 w-auto py-2 mt-2 px-2 rounded-lg bg-slate-900 cursor-pointer">
           <img
-            src={`https://webcrafter-production.up.railway.app/images/${userData.profilePic}`}
+            src= {userData.profilePic}
 
             className="w-10 h-10 rounded-full object-cover"
             alt="profilePic"
@@ -112,15 +112,15 @@ function Blog() {
               userData.blogs.map((blog) => (
                 <div
                   key={blog._id}
-                  className="relative w-3/4 lg:w-2/3 xl:w-1/3 h-auto mx-4 my-auto bg-slate-100 shadow-lg rounded-lg hover:shadow-xl"
+                  className="relative w-5/6 sm:3/4 lg:w-2/3 xl:w-1/3 h-auto mx-4 my-auto bg-slate-200 shadow-lg rounded-lg hover:shadow-xl"
                 >
                   <img
-                    className="w-full h-60 p-1 object-cover object-center rounded-lg"
+                    className="w-full h-56 p-1 object-cover object-center rounded-lg"
                     src={`https://webcrafter-production.up.railway.app/images/${blog.blogPic}`}
                     // src={`http://localhost:3000/images/${blog.blogPic}`}
                     alt="Blog"
                   />
-                  <div className="flex flex-col items-start justify-center px-6 py-4">
+                  <div className="flex flex-col items-start justify-center px-6 sm:py-4">
                     <div className="flex justify-between w-full items-center mb-2">
                       <div className="font-medium text-gray-500 text-sm">
                         Created: {blog.createdAt.split("T")[0]}

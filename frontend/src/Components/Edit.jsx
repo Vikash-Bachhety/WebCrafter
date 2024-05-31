@@ -69,11 +69,11 @@ function Edit() {
   return (
     <div className="flex flex-wrap justify-center w-full items-center gap-10 py-10 min-h-screen bg-gray-900">
       {userData && (
-        <div className="w-96 sm:w-1/2 lg:w-1/3 h-auto mt-8 mb-14 mx-4 bg-slate-100 shadow-lg rounded-lg hover:shadow-xl transition duration-500">
+        <div className="w-80 sm:w-1/2 lg:w-1/3 h-auto mt-20 md:mt-8 mb-14 mx-4 bg-slate-100 shadow-lg rounded-lg hover:shadow-xl transition duration-500">
           
           <div className="flex flex-col gap-2 px-4 justify-center">
           <img
-            className="w-full h-60 mt-3 object-cover object-center border border-black rounded-t-lg"
+            className="w-full h-52 sm:h-60 mt-3 object-cover object-center border border-black rounded-t-lg"
             src={`https://webcrafter-production.up.railway.app/images/${userData.blogPic}`}
             // src={`http://localhost:3000/images/${userData.blogPic}`}
             alt="User Profile"
@@ -86,7 +86,7 @@ function Edit() {
           setBlogPic(e.target.files[0])
           }}/>
           </div>
-          <div className="flex flex-col gap-1 px-4 justify-center">
+          <div className="flex flex-col gap-1 px-4 justify-center items-start">
             <div className="font-medium text-xl mt-2">{userData.title}</div>
             <input
               type="text"
@@ -114,7 +114,7 @@ function Edit() {
             id="main"
               type="text"
               className="w-full px-3 py-1 mb-2 border rounded-md focus:outline-none focus:border-blue-500"
-              rows={5}
+              rows={4}
               placeholder="New content"
               name="newContent"
               value={content}
@@ -122,7 +122,7 @@ function Edit() {
                 setContent(e.target.value);
               }}
             />
-            <div className="flex justify-between">
+            <div className="w-full flex justify-between">
               <Link
                 to="/Blog"
                 type="button"

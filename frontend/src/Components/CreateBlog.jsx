@@ -61,7 +61,7 @@ function CreateBlog() {
 
   return (
     <div className="flex justify-center w-full items-center min-h-[92vh] bg-gray-900">
-      <div className="max-w-lg w-11/12 md:w-full mx-4 px-2 bg-slate-100 shadow-lg rounded-lg overflow-hidden">
+      <div className="max-w-lg w-11/12 md:w-full mt-16 md:mt-0 mx-4 px-2 bg-slate-100 shadow-lg rounded-lg overflow-hidden">
         <form
           onSubmit={handleSubmit}
           encType="multipart/form-data"
