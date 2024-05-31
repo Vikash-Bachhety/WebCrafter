@@ -21,8 +21,8 @@ function CreateBlog() {
     try {
       const token = localStorage.getItem("token");
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
       const userId = decodedToken.userID;
+      console.log(userId);
 
       const formData = new FormData();
       formData.append("blogFile", input.blogPic);
