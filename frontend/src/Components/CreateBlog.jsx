@@ -51,7 +51,7 @@ function CreateBlog() {
       if (error.response.status === 400) {
         toast.warning("No file uploaded");
       } else {
-        toast.error("Internal server error");
+        toast.error(error);
       }
       console.log(error);
     }
