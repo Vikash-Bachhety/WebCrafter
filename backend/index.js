@@ -18,7 +18,7 @@ app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./images/");
+    cb(null, "./public/images/");
   },
   filename: function (req, file, cb) {
     cb(null, `${Date.now()}-blog-${file.originalname}`);
