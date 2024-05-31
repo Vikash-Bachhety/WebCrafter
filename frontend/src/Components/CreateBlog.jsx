@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function CreateBlog() {
   const [input, setInput] = useState({
-    blogPic: null,
+    // blogPic: null,
     title: "",
     city: "",
     content: "",
@@ -25,7 +25,7 @@ function CreateBlog() {
       console.log(userId);
 
       const formData = new FormData();
-      formData.append("blogFile", input.blogPic);
+      // formData.append("blogFile", input.blogPic);
       formData.append("title", input.title);
       formData.append("city", input.city);
       formData.append("content", input.content);
@@ -48,7 +48,7 @@ function CreateBlog() {
       toast.success("Blog successfully created");
       navigate("/Blog");
     } catch (error) {
-      if (error.response.status === 400) {
+      if (error.response.status === 401) {
         toast.warning("No file uploaded");
       } else {
         toast.error("Internal server error");
@@ -57,9 +57,9 @@ function CreateBlog() {
     }
   };
 
-  const handleFileChange = (e) => {
-    setInput({ ...input, blogPic: e.target.files[0] });
-  };
+  // const handleFileChange = (e) => {
+  //   setInput({ ...input, blogPic: e.target.files[0] });
+  // };
 
   return (
     <div className="flex justify-center w-full items-center min-h-[92vh] bg-gray-900">
@@ -69,13 +69,13 @@ function CreateBlog() {
           encType="multipart/form-data"
           className="flex flex-col items-start px-4 py-4 mb-2 text-md text-gray-700"
           >
-          <label
+          {/* <label
             htmlFor="blog"
             className="block mb-1 text-sm font-bold text-gray-700"
           >
             Blog Picture
           </label>
-          <input type="file" onChange={handleFileChange} name="blogFile" />
+          <input type="file" onChange={handleFileChange} name="blogFile" /> */}
 
           <label
             htmlFor="title"

@@ -227,14 +227,14 @@ app.get("/profile/:id", async (req, res) => {
   }
 });
 
-app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
+app.post("/createBlog", async (req, res) => {
   const { title, city, content } = req.body;
   // console.log(req.body);
   const userId = req.body.userId;
 
-  if (!req.file) {
-    return res.status(400).send("No file uploaded.");
-  }
+  // if (!req.file) {
+  //   return res.status(400).send("No file uploaded.");
+  // }
 
   try {
     let user = await CrafterUser.findById(userId);
@@ -246,7 +246,7 @@ app.post("/createBlog", upload.single("blogFile"), async (req, res) => {
       author: userId,
       city,
       content,
-      blogPic: req.file.filename.toLowerCase(),
+      // blogPic: req.file.filename.toLowerCase(),
     });
 
     await CrafterUser.findByIdAndUpdate(userId, {$push: { blogs: newBlog._id } });
