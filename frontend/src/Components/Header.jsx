@@ -56,14 +56,14 @@ function Header() {
       {isLoggedIn ? (
         <button
           onClick={handleLogout}
-          className=" flex justify-center bg-rose-600 hover:bg-rose-800 text-lg items-center text-white md:text-lg font-semibold mt-2 py-2 px-3 md:mt-0 w-auto h-6 md:h-8 rounded-md md:mr-10"
+          className=" flex justify-center bg-rose-600 hover:bg-rose-800 text-lg items-center text-white md:text-lg font-semibold mt-6 py-2 px-3 md:mt-0 w-auto h-6 md:h-8 rounded-md md:mr-10"
         >
           Logout
         </button>
       ) : (
         <button
           onClick={handleRegister}
-          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-2 py-2 items-center md:mt-0 w-24 h-6 md:w-28 md:h-8 rounded-md md:mr-10"
+          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-6 py-2 items-center md:mt-0 w-24 h-6 md:w-28 md:h-8 rounded-md md:mr-10"
         >
           Sign Up
         </button>

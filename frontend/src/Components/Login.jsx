@@ -5,8 +5,7 @@ import "./Login.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BASE_URL = "https://webcrafter-production.up.railway.app";
-// const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://webcrafter-production.up.railway.app" || "http://localhost:3000";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -45,8 +44,8 @@ function Login() {
   };
 
   return (
-    <div className="min-h-[90vh] flex items-center justify-center bg-black py-12 mx-auto px-2 sm:px-5 lg:px-8">
-      <div className="w-11/12 sm:w-auto px-3 sm:px-6 py-4 bg-slate-200 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 flex flex-col items-center">
+    <div className="min-h-[90vh] flex items-center justify-center bg-gray-900 py-12 mx-auto px-2 sm:px-5 lg:px-8">
+      <div className="w-11/12 sm:w-auto px-3 sm:px-6 py-4 bg-slate-950 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-90 flex flex-col items-center">
         <h2 className="text-2xl text-gray-100 font-semibold">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 w-auto text-left">
