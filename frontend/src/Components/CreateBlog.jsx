@@ -122,7 +122,7 @@ function CreateBlog() {
           <input
             type="submit"
             value="Create"
-            className="w-full px-4 py-2 text-sm font-bold text-white bg-green-500 rounded-md hover:bg-green-700 focus:outline-none"
+            className="w-full px-4 py-2 text-sm font-bold text-white bg-green-500 rounded-md hover:bg-green-700 cursor-pointer focus:outline-none"
           />
         </form>
         <div className="flex flex-col items-center">
