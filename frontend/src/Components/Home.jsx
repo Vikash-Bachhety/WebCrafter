@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 function Home() {
   return (
     <div className="bg-slate-950 min-h-screen flex flex-col items-center justify-center">
-      <div className="text-center md:flex md:flex-col md:items-center mt-20 md:mt-10 py-8 md:pt-16 px-4 lg:px-16">
+      <div className="text-center md:flex md:flex-col md:items-center mt-24 md:mt-10 py-8 md:pt-16 px-4 lg:px-16">
         <h1 className="animate text-4xl text-white lg:text-6xl hover:tracking-wide duration-200 font-bold mb-4 md:mb-16 hover:text-white">
           Welcome to WebCrafter
         </h1>
