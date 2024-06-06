@@ -85,7 +85,7 @@ function Recipe() {
 
   return (
     <div className="bg-sky-950 min-h-screen flex flex-col items-center text-black text-shadow md:flex-wrap md:flex-row md:justify-center md:items-start md:text-white">
-      <div className="animate flex items-center gap-x-4 justify-center w-full mt-24 md:mt-16">
+      <div className="animate flex items-center gap-x-4 justify-center w-full mt-28 md:mt-16">
         <input
           className="text-sm text-black md:text-lg font-medium py-1 px-5 w-56 md:w-72 border-2 border-gray-300 outline-none rounded-full"
           type="search"
