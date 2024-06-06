@@ -27,7 +27,7 @@ function Movies() {
 
   return (
     <div className="bg-slate-950 flex flex-col items-center w-full min-h-screen font-serif tracking-wider">
-      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-32 gap-x-4 sm:mt-28 md:mt-28 h-24 items-center justify-center">
+      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-40 gap-x-4 sm:mt-28 md:mt-28 h-24 items-center justify-center">
         <input
           type="text"
           value={searchTerm}
