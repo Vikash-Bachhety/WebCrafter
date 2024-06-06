@@ -58,7 +58,7 @@ function Weather() {
 
   return (
     <div className="bg-gray-950 bg-center w-full bg-cover min-h-[95vh] pt-20 sm:pt-14 mx-auto sm:fixed z-10 left-0 font-serif tracking-wider">
-      <div className="h-[500px] sm:h-[450px] w-[320px] sm:w-11/12 md:w-3/4 xl:w-1/2 md:h-[480px] xl:h-[500px] drop-shadow-md mx-auto flex flex-col mb-3 mt-12 sm:mt-20 md:mt-8 xl:mt-12 transition-all duration-1000 bg-white rounded-lg bg-opacity-5 pt-2 sm:py-6 border-x-2 border-y-4 border-white">
+      <div className="h-[500px] sm:h-[450px] w-[320px] sm:w-11/12 md:w-3/4 xl:w-1/2 md:h-[480px] xl:h-[500px] drop-shadow-md mx-auto flex flex-col mb-3 mt-16 sm:mt-20 md:mt-8 xl:mt-12 transition-all duration-1000 bg-white rounded-lg bg-opacity-5 pt-2 sm:py-6 border-x-2 border-y-4 border-white">
         <h1 className="font-bold mx-auto text-xl sm:text-2xl sm:mb-2 mt-5 sm:mt-0 font-sans text-white">
           Weather App
         </h1>
