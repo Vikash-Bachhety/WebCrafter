@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from "@mui/material/Button";
 
 function CreateBlog() {
   const [input, setInput] = useState({
@@ -31,7 +32,7 @@ function CreateBlog() {
       formData.append("content", input.content);
       formData.append("userId", userId);
 
-      const response = await axios.post( 
+      const response = await axios.post(
         "https://webcrafter-production.up.railway.app/createBlog",
         // "http://localhost:3000/createBlog",
         formData,
@@ -66,7 +67,7 @@ function CreateBlog() {
           onSubmit={handleSubmit}
           encType="multipart/form-data"
           className="flex flex-col items-start px-4 py-4 mb-2 text-md text-gray-700"
-          >
+        >
           <label
             htmlFor="blog"
             className="block mb-1 text-sm font-bold text-gray-700"
@@ -85,7 +86,7 @@ function CreateBlog() {
             type="text"
             value={input.title}
             onChange={(e) => setInput({ ...input, title: e.target.value })}
-            onBlur={(e)=> setInput({ ...input, title: e.target.value.trim() })}
+            onBlur={(e) => setInput({ ...input, title: e.target.value.trim() })}
             placeholder="Blog title"
             required
             className="w-full px-3 py-1 mb-3 border rounded-md focus:outline-none focus:border-blue-500 whitespaces-pre"
@@ -101,29 +102,38 @@ function CreateBlog() {
             type="text"
             value={input.city}
             onChange={(e) => setInput({ ...input, city: e.target.value })}
-            onBlur={(e)=> setInput({ ...input, city: e.target.value.trim() })}
+            onBlur={(e) => setInput({ ...input, city: e.target.value.trim() })}
             placeholder="Enter your city"
             required
             className="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500 capitalize"
           />
 
-          <label htmlFor="content" className="block mb-2 text-sm font-bold text-gray-700">Blog</label>
+          <label
+            htmlFor="content"
+            className="block mb-2 text-sm font-bold text-gray-700"
+          >
+            Blog
+          </label>
           <textarea
             id="main"
             value={input.content}
             onChange={(e) => setInput({ ...input, content: e.target.value })}
-            onBlur={(e)=> setInput({ ...input, content: e.target.value.trim() })}
+            onBlur={(e) =>
+              setInput({ ...input, content: e.target.value.trim() })
+            }
             rows="4"
             placeholder="Write your content"
             required
             className="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500 resize-none"
           />
-
-          <input
-            type="submit"
-            value="Create"
-            className="w-full px-4 py-2 text-sm font-bold text-white bg-green-500 rounded-md hover:bg-green-700 cursor-pointer focus:outline-none"
-          />
+          <div className="w-full flex justify-center">
+            <Button
+              variant="contained"
+              color="success"
+            >
+              Create
+            </Button>
+          </div>
         </form>
         <div className="flex flex-col items-center">
           <Link to="/Blog" className="text-blue-600 mb-5">

@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { IoMdAdd } from "react-icons/io";
 import "./index.css";
 import FadeLoader from "react-spinners/FadeLoader";
+import Button from "@mui/material/Button";
 
 function Blog() {
   const [userData, setUserData] = useState({});
@@ -80,12 +81,11 @@ function Blog() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center w-full gap-y-10 gap-x-20 py-10 min-h-[90vh] bg-gray-900 border">
-      <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-0 pb-5 border-b border-slate-600">
+    <div className="flex flex-wrap justify-center w-full gap-y-10 gap-x-20 py-10 min-h-[95vh] bg-gray-900 border">
+      <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-10 pb-5 border-b border-slate-600">
         <div className="light flex items-end gap-4 w-auto py-2 mt-2 px-2 rounded-lg bg-slate-900 cursor-pointer">
           <img
-            src= {userData.profilePic}
-
+            src={userData.profilePic}
             className="w-10 h-10 rounded-full object-cover"
             alt="profilePic"
           />
@@ -95,11 +95,9 @@ function Blog() {
         </div>
         <div className="flex gap-6">
           <Link to="/createBlog">
-            <input
-              type="button"
-              value="Create"
-              className="w-auto px-3 py-1 cursor-pointer text-md font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none"
-            />
+            <Button variant="contained" color="success">
+              Create
+            </Button>
           </Link>
         </div>
       </div>
@@ -128,7 +126,7 @@ function Blog() {
                       <Link
                         to={`/edit/${blog._id}`}
                         className="w-auto px-3 py-1 cursor-pointer text-sm tracking-wider text-white bg-teal-600 rounded-md hover:bg-teal-700"
-                        >
+                      >
                         Edit
                       </Link>
                     </div>
@@ -145,14 +143,15 @@ function Blog() {
                     </p>
                   </div>
                   <div className="w-full flex justify-center pb-4">
-                    <input
+                    <Button
+                      variant="outlined"
+                      color="error"
                       onClick={() => {
                         handleDelete(blog._id);
                       }}
-                      type="button"
-                      value="Delete"
-                      className="w-20 px-4 py-1 cursor-pointer text-md font-bold text-white bg-rose-500 rounded-md hover:bg-rose-700 focus:outline-none"
-                    />
+                    >
+                      Delete
+                    </Button>
                   </div>
                 </div>
               ))

@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import "./App.css";
 import { ToastContainer } from "react-toastify";
 
 function App() {
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname === "/Login" || location.pathname === "/Signup";
+
   return (
     <>
       <ToastContainer
@@ -15,9 +17,9 @@ function App() {
         pauseOnHover={false}
         theme="dark"
       />
-      <Header />
+      {!hideHeaderFooter && <Header />}
       <Outlet />
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
     </>
   );
 }
