@@ -92,6 +92,7 @@ function Recipe() {
           placeholder="search meal"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
+onBlur={(e) => setSearchInput(e.target.value.trim())}
         />
         <img
           className="h-20 w-20 filter invert"
