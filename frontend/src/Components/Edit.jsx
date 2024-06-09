@@ -69,7 +69,7 @@ function Edit() {
   return (
     <div className="flex flex-wrap justify-center w-full items-center gap-10 py-10 min-h-screen bg-gray-900">
       {userData && (
-        <div className="w-80 sm:w-1/2 lg:w-1/3 h-auto mt-20 md:mt-8 mb-14 mx-4 bg-slate-100 shadow-lg rounded-lg hover:shadow-xl transition duration-500">
+        <div className="w-80 sm:w-1/2 lg:w-1/3 h-auto mt-24 md:mt-8 mb-14 mx-4 bg-slate-100 shadow-lg rounded-lg hover:shadow-xl transition duration-500">
           
           <div className="flex flex-col gap-2 px-4 justify-center">
           <img

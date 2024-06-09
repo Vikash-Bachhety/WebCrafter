@@ -82,7 +82,7 @@ function Blog() {
 
   return (
     <div className="flex flex-wrap justify-center w-full gap-y-10 gap-x-20 py-10 min-h-[95vh] bg-gray-900 border">
-      <div className="w-3/4 h-16 flex justify-between items-center mt-16 xl:mt-10 pb-5 border-b border-slate-600">
+      <div className="w-3/4 h-16 flex justify-between items-center mt-24 xl:mt-10 pb-5 border-b border-slate-600">
         <div className="light flex items-end gap-4 w-auto py-2 mt-2 px-2 rounded-lg bg-slate-900 cursor-pointer">
           <img
             src={userData.profilePic}

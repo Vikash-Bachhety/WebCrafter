@@ -159,7 +159,7 @@ function Signup() {
             autoComplete=""
             required
             className="h-10 bg-white outline-none focus:border-none input tracking-wide"
-            placeholder="confirm password"
+            placeholder="Confirm password"
             value={input.confirm_password}
             onChange={(e) =>
               setInput({ ...input, confirm_password: e.target.value })
