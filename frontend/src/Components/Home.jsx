@@ -8,7 +8,7 @@ import CardContent from "@mui/material/CardContent";
 function Home() {
   return (
     <div className="bg-slate-950 min-h-screen flex flex-col items-center justify-center">
-      <div className="text-center md:flex md:flex-col md:items-center mt-20 md:mt-10 py-8 md:pt-16 px-4 lg:px-16">
+      <div className="text-center md:flex md:flex-col md:items-center mt-28 md:mt-10 py-8 md:pt-16 px-4 lg:px-16">
         <h1 className="animate text-4xl text-white lg:text-6xl hover:tracking-wide duration-200 font-bold mb-4 md:mb-16 hover:text-white">
           Welcome to WebCrafter
         </h1>
@@ -20,33 +20,33 @@ function Home() {
         </p>
       </div>
       <div className="flex flex-wrap gap-x-8 gap-y-6 sm:gap-y-10 justify-center w-full py-3 md:py-6 px-4 mb-28 md:mb-20 lg:px-20 z-1">
-        <Link to="/Weather">
+        <Link to="/Blog">
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
               <CardContent className="bg-slate-950">
-                <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4">
-                  Weather Forecast
+                <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
+                Create your Blogs
                 </h2>
-                <p className="text-base text-gray-100 lg:text-lg">
-                  Get real-time weather updates and forecasts for any location
-                  worldwide.
+                <p className="text-base text-gray-100 lg:text-lg text-center">
+                start creating, editing your blogs today. 
+                Express your ideas & experiences.
                 </p>
               </CardContent>
             </Card>
           </Box>
         </Link>
-        <Link to="/Movies">
+        <Link to="/Weather">
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
               <CardContent className="bg-slate-950">
-                <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4">
-                  Movie Mania
+                <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
+                  Weather Forecast
                 </h2>
-                <p className="text-base text-gray-100 lg:text-lg">
-                  Search for movies and get details like IMDb ratings, posters,
-                  years, plots, and more.
+                <p className="text-base text-gray-100 lg:text-lg text-center">
+                  Get real-time weather updates and forecasts for any location
+                  worldwide.
                 </p>
               </CardContent>
             </Card>
@@ -57,12 +57,28 @@ function Home() {
             <Card>
               <span className="badge">Log In</span>
               <CardContent className="bg-slate-950">
-                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Explore Words
                 </h2>
-                <p className="text-base lg:text-lg text-gray-100">
+                <p className="text-base lg:text-lg text-gray-100 text-center">
                   Access a comprehensive dictionary to look up definitions and
                   translations.
+                </p>
+              </CardContent>
+            </Card>
+          </Box>
+        </Link>
+        <Link to="/Movies">
+          <Box className="scrollLeft content-box relative">
+            <Card>
+              <span className="badge">Log In</span>
+              <CardContent className="bg-slate-950">
+                <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
+                  Movie Mania
+                </h2>
+                <p className="text-base text-gray-100 lg:text-lg text-center">
+                  Search for movies and get details like IMDb ratings, posters,
+                  years, plots, and more.
                 </p>
               </CardContent>
             </Card>
@@ -73,10 +89,10 @@ function Home() {
             <Card>
               <span className="badge">Log In</span>
               <CardContent className="bg-slate-950">
-                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Recipe Finder
                 </h2>
-                <p className="text-base lg:text-lg text-gray-100">
+                <p className="text-base lg:text-lg text-gray-100 text-center">
                   Discover a wide range of recipes from various cuisines and
                   dietary preferences.
                 </p>
@@ -89,10 +105,10 @@ function Home() {
             <Card>
               <span className="badge">Log In</span>
               <CardContent className="bg-slate-950">
-                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Contact Us
                 </h2>
-                <p className="text-base lg:text-lg text-gray-100">
+                <p className="text-base lg:text-lg text-gray-100 text-center">
                   Reach out to us for any inquiries or feedback.
                 </p>
               </CardContent>
