@@ -26,8 +26,8 @@ function Signup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://webcrafter-production.up.railway.app/api/signup",
-        // "http://localhost:3000/api/signup",
+        // "https://webcrafter-production.up.railway.app/api/signup",
+        "http://localhost:3000/api/signup",
         input
       );
 
@@ -212,3 +212,5 @@ function Signup() {
 }
 
 export default Signup;
+
+

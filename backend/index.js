@@ -165,7 +165,7 @@ app.post("/api/signup", async (req, res) => {
       return res.status(400).send("User already registered. Please login.");
     }
     if (password !== confirm_password) {
-      res.status(422).send("password not matched");
+     return res.status(422).send("password not matched");
     }
 
     const boypic = "https://avatar.iran.liara.run/public/boy";
