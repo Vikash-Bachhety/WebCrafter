@@ -6,10 +6,12 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-import EmailIcon from '@mui/icons-material/Email';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import { InputBase } from '@mui/material';
-import InputAdornment from '@mui/material/InputAdornment';
+import EmailIcon from "@mui/icons-material/Email";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import { InputBase } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 const BASE_URL =
   "https://webcrafter-production.up.railway.app" || "http://localhost:3000";
@@ -17,6 +19,7 @@ const BASE_URL =
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -80,7 +83,7 @@ function Login() {
               Password
             </label>
             <InputBase
-              type="password"
+              type={showPassword ? "text" : "password"}
               startAdornment={
                 <InputAdornment position="start">
                   <VpnKeyIcon />
@@ -92,10 +95,17 @@ function Login() {
               required
               className="h-10 bg-white input mt-2 tracking-wide"
             />
+            <div onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? (
+                <VisibilityOffIcon className="fixed top-44 right-6 md:right-10" />
+              ) : (
+                <VisibilityIcon className="fixed top-44 right-6 md:right-10" />
+              )}
+            </div>
           </div>
           <div className="w-full flex justify-center mt-2">
             <Button variant="contained" type="submit">
-             log in
+              log in
             </Button>
           </div>
           <div className="flex justify-center w-full gap-4 px-0 mt-4">
