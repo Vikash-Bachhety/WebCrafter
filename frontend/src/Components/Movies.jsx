@@ -4,14 +4,21 @@ function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [message, setMessage] = useState("");
 
   const movieKey = import.meta.env.VITE_MOVIE_KEY
 
   const handleSearch = async () => {
+    if(searchTerm === ""){
+      setMessage("Please enter word first")
+      return setMessage;
+    }
     const url = `https://www.omdbapi.com/?apikey=${movieKey}&s=${searchTerm}`;
     const response = await fetch(url);
     const data = await response.json();
     setMovies(data.Search || []);
+    setSearchTerm("");
+    setMessage("")
   };
 
   const showDetails = async (movie) => {
@@ -27,7 +34,7 @@ function Movies() {
 
   return (
     <div className="bg-slate-950 flex flex-col items-center w-full min-h-screen font-serif tracking-wider">
-      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-40 gap-x-4 sm:mt-28 md:mt-28 h-24 items-center justify-center">
+      <div className="flex sm:flex-row flex-col w-full sm:w-1/2 mt-40 gap-x-4 sm:mt-32 md:mt-28 h-24 items-center justify-center">
         <input
           type="text"
           value={searchTerm}
@@ -42,6 +49,7 @@ function Movies() {
           Search
         </button>
       </div>
+      <p className="text-rose-400 font-thin sm:text-xl tracking-widest mb-3 -mt-2 sm:-mt-6 sm:mb-6">{message}</p>
       <div className="w-full h-auto flex flex-wrap justify-center gap-10 pb-32 md:pb-20">
         {movies.map((movie, index) => (
           <div

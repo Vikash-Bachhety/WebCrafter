@@ -24,7 +24,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
                 Create your Blogs
                 </h2>
@@ -40,7 +40,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
                   Weather Forecast
                 </h2>
@@ -56,7 +56,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Explore Words
                 </h2>
@@ -72,7 +72,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl text-gray-100 lg:text-3xl font-bold mb-4 text-center">
                   Movie Mania
                 </h2>
@@ -88,7 +88,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Recipe Finder
                 </h2>
@@ -104,7 +104,7 @@ function Home() {
           <Box className="scrollLeft content-box relative">
             <Card>
               <span className="badge">Log In</span>
-              <CardContent className="bg-slate-950">
+              <CardContent className="bg-slate-950 hover:bg-slate-800 h-52 flex flex-col justify-center">
                 <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100 text-center">
                   Contact Us
                 </h2>
@@ -115,18 +115,6 @@ function Home() {
             </Card>
           </Box>
         </Link>
-        {/* <Link to="/Location">
-          <div className="scrollLeft content-box relative">
-            <span className="badge">Log In</span>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-gray-100">
-              Location Tracker
-            </h2>
-            <p className="text-base lg:text-lg text-gray-100">
-              Track locations and get detailed information about geographical
-              coordinates.
-            </p>
-          </div>
-        </Link> */}
       </div>
     </div>
   );

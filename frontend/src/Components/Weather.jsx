@@ -13,11 +13,16 @@ function Weather() {
   const weatherKey = import.meta.env.VITE_WEATHER_KEY;
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+  const [message, setMessage] = useState("");
 
   const inputRef = useRef(null);
   const resultRef = useRef(null);
 
   const handleSearch = async () => {
+    if(city === ""){
+      setMessage("Please enter valid City")
+      return setMessage;
+    }
     try {
       setCity("");
       const response = await fetch(
@@ -28,6 +33,7 @@ function Weather() {
       }
       const data = await response.json();
       setWeatherData(data);
+      setMessage("")
       console.log(data);
       resultRef.current.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
@@ -82,6 +88,7 @@ function Weather() {
               Search
             </Button>
           </div>
+          <p className="text-purple-400 font-thin tracking-widest mb-3 sm:mb-6">{message}</p>
 
           <div
             id="result"

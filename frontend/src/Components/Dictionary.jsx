@@ -5,10 +5,15 @@ import Button from "@mui/material/Button";
 function Dictionary() {
   const [word, setWord] = useState("");
   const [meaning, setMeaning] = useState(null);
+  const [message, setMessage] = useState("");
   const inputRef = useRef(null);
   const outputRef = useRef(null);
 
   const handleSearch = async function () {
+    if(word === ""){
+      setMessage("Please enter valid Word")
+      return setMessage;
+    }
     try {
       setWord("");
       const response = await fetch(
@@ -19,6 +24,7 @@ function Dictionary() {
       } else {
         const data = await response.json();
         setMeaning(data);
+        setMessage("")
         if (resultRef.current) {
           resultRef.current.scrollIntoView({ behavior: "smooth" });
         }
@@ -53,6 +59,7 @@ function Dictionary() {
               Search
             </Button>
           </div>
+          <p className="text-orange-400 font-thin tracking-widest mb-3 sm:mb-6">{message}</p>
 
           <div
             id="result"
