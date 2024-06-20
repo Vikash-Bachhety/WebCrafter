@@ -10,7 +10,7 @@ function Movies() {
 
   const handleSearch = async () => {
     if(searchTerm === ""){
-      setMessage("Please enter valid movie name")
+      setMessage("Please enter a movie name")
       return setMessage;
     }
     const url = `https://www.omdbapi.com/?apikey=${movieKey}&s=${searchTerm}`;
