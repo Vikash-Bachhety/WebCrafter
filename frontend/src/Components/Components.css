@@ -33,10 +33,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #ffdf5d; 
-    color: #151515;
+    background-color: #f97316; 
+    color: #ffffff;
     padding: 4px 8px;
-    font-size: 0.75rem;
+    font-size: 0.80rem;
+    font-weight: 600;
     border-radius: 4px; 
   }
     

@@ -39,8 +39,8 @@ function Contact() {
   };
 
   return (
-    <div className="bg-gray-950 flex justify-center bg-center border border-black w-full bg-cover h-screen sm:mt-4 relative z-10 left-0 font-serif tracking-wider">
-      <div className="animate w-3/4 h-2/3 mt-36 sm:w-2/3 lg:w-1/3 sm:h-3/4 bg-white bg-opacity-10 flex justify-center items-center shadow-black shadow-xl rounded-lg sm:mt-24 md:mt-20">
+    <div className="bg-slate-950 flex justify-center bg-center border border-black w-full bg-cover h-screen sm:mt-4 relative z-10 left-0 font-serif tracking-wider">
+      <div className="animate w-3/4 h-2/3 mt-36 sm:w-2/3 lg:w-1/3 sm:h-3/4 bg-sky-700 flex justify-center items-center shadow-black shadow-xl rounded-lg sm:mt-24 md:mt-20">
         <form
           onSubmit={handleSubmit}
           className="mt-8 sm:mt-0 p-6 sm:px-8 xl:px-0 w-full max-w-md"
@@ -123,7 +123,7 @@ function Contact() {
           <div className="flex items-center mb-6 justify-between">
             <button
               type="submit"
-              className="bg-red-500 hover:bg-green-500 text-white font-bold sm:py-2 px-2 sm:px-4 rounded focus:outline-none focus:shadow-outline mb-2"
+              className="bg-red-600 hover:bg-green-600 text-white font-semibold tracking-wide sm:py-2 px-2 sm:px-4 rounded focus:outline-none focus:shadow-outline mb-2"
             >
               Send
             </button>

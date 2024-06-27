@@ -7,7 +7,7 @@ import gmail from "../assets/icons/gmail.png";
 
 function Footer() {
   return (
-    <div className="bg-black flex justify-center items-center gap-4 fixed bottom-0 left-0 min-w-full h-auto p-4 md:p-8 lg:h-12 z-50 pt-1 tracking-wider">
+    <div className="bg-blue-950 flex justify-center items-center gap-4 fixed bottom-0 left-0 min-w-full h-auto p-4 md:p-8 lg:h-12 z-50 pt-1 tracking-wider">
       <div className="text-white text-md">
         <Links to="Home" text="Home" />
       </div>

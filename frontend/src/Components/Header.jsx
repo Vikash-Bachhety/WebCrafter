@@ -33,7 +33,7 @@ function Header() {
   };
 
   return (
-    <div className="bg-black flex flex-col md:flex md:flex-row text-white min-w-full h-28 md:h-16 text-md md:text-xl font-normal md:tracking-wider font-sans items-center justify-between md:px-5 fixed top-0 left-0 z-20">
+    <div className="bg-blue-950 flex flex-col md:flex md:flex-row text-white min-w-full h-28 md:h-16 text-md md:text-xl font-normal md:tracking-wider font-sans items-center justify-between md:px-5 fixed top-0 left-0 z-20">
       <Link
         to="/Home"
         className="bg-transparent flex flex-col w-12 h-12 md:w-40 md:h-40 md:mt-8 rounded-full relative z-10"
@@ -59,19 +59,17 @@ function Header() {
           variant="contained"
           color="error"
           onClick={handleLogout}
-          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6  md:h-10 rounded-md md:mr-10"
+          className="animate flex justify-center text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6  md:h-10 rounded-md md:mr-10"
         >
           Logout
         </Button>
       ) : (
-        <Button
-        variant="contained"
-        color="primary"
+        <button
           onClick={handleRegister}
-          className="animate flex justify-center bg-blue-500 hover:bg-blue-700 text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6  md:h-10 rounded-md md:mr-10"
+          className="animate flex justify-center bg-orange-500 hover:bg-orange-600 text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6 md:h-10 rounded-md md:mr-4"
         >
           Sign Up
-        </Button>
+        </button>
       )}
     </div>
   );

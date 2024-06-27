@@ -54,16 +54,16 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 py-12 mx-auto px-2 sm:px-5 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-blue-950 py-12 mx-auto px-2 sm:px-5 lg:px-8">
       <Paper
         elevation={24}
         className="w-11/12 sm:w-auto xl:w-1/3 px-3 sm:px-6 py-4 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-90 flex flex-col items-center"
-        sx={{ backgroundColor: "rgb(15 23 42)" }}
+        sx={{ backgroundColor: "rgb(3, 200, 192)" }}
       >
         <h2 className="text-2xl text-gray-100 font-semibold">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 w-auto text-left">
-            <label htmlFor="fullName" className="text-gray-100 tracking-wide">
+            <label htmlFor="fullName" className="text-gray-100 font-semibold tracking-wide">
               Email
             </label>
             <InputBase
@@ -79,7 +79,7 @@ function Login() {
               required
               className="h-10 bg-white outline-none focus:border-none input mt-2 tracking-wide"
             />
-            <label htmlFor="fullName" className="text-gray-100 tracking-wide">
+            <label htmlFor="fullName" className="text-gray-100 font-semibold tracking-wide">
               Password
             </label>
             <InputBase
@@ -109,8 +109,8 @@ function Login() {
             </Button>
           </div>
           <div className="flex justify-center w-full gap-4 px-0 mt-4">
-            <span className="text-gray-500">Already have an account?</span>
-            <Link to="/Signup" className="text-sky-700 hover:text-sky-500">
+            <span className="text-gray-100">Already have an account?</span>
+            <Link to="/Signup" className=" text-blue-700 hover:text-blue-900">
               Create an account
             </Link>
           </div>

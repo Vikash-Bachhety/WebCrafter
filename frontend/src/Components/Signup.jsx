@@ -60,11 +60,11 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 py-12 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-blue-950 py-12 mx-auto px-4 sm:px-6 lg:px-8">
       <Paper
         elevation={24}
         className="w-11/12 md:w-1/2 xl:w-1/3 px-3 sm:px-6 py-4 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-90 flex flex-col items-center"
-        sx={{ backgroundColor: "rgb(15 23 42)" }}
+        sx={{ backgroundColor: "rgb(3, 200, 192)" }}
       >
         {" "}
         <h2 className="text-2xl text-gray-100 font-semibold">Sign Up</h2>
@@ -74,7 +74,7 @@ function Signup() {
         >
           <label
             htmlFor="fullName"
-            className="text-gray-100 text-left tracking-wide"
+            className="text-gray-100 text-left font-semibold tracking-wide"
           >
             Fullname
           </label>
@@ -97,7 +97,7 @@ function Signup() {
 
           <label
             htmlFor="email"
-            className="text-gray-100 text-left tracking-wide"
+            className="text-gray-100 font-semibold text-left tracking-wide"
           >
             Email
           </label>
@@ -120,7 +120,7 @@ function Signup() {
 
           <label
             htmlFor="password"
-            className="text-gray-100 text-left tracking-wide"
+            className="text-gray-100 font-semibold text-left tracking-wide"
           >
             Password
           </label>
@@ -143,7 +143,7 @@ function Signup() {
 
           <label
             htmlFor="confirm_password"
-            className="text-gray-100 text-left tracking-wide"
+            className="text-gray-100 font-semibold text-left tracking-wide"
           >
             Confirm password
           </label>
@@ -201,7 +201,7 @@ function Signup() {
           </div>
           <div className="flex justify-center w-full gap-1 mt-2">
             <span className="text-gray-500">Already have an account?</span>
-            <Link to="/Login" className="text-sky-700 hover:text-sky-500">
+            <Link to="/Login" className="text-blue-700 hover:text-blue-900">
               Login here
             </Link>
           </div>
