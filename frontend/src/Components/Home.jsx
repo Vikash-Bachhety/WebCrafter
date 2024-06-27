@@ -7,9 +7,9 @@ import CardContent from "@mui/material/CardContent";
 
 function Home() {
   return (
-    <div className="bg-sky-500 h-[95vh] flex flex-col items-center justify-center">
-      <div className="text-center md:flex md:flex-col md:items-center mt-28 md:mt-14 py-8 md:pt-16 px-4 lg:px-16">
-        <h1 className="animate text-4xl text-slate-100 lg:text-6xl hover:tracking-wide duration-200 font-bold mb-4 md:mb-0 hover:text-blue-50">
+    <div className="bg-sky-500 md:h-[95vh] flex flex-col items-center justify-center">
+      <div className="text-center md:flex md:flex-col md:items-center mt-32 md:mt-14 py-8 md:pt-16 px-4 lg:px-16">
+        <h1 className="animate text-3xl text-slate-100 lg:text-6xl hover:tracking-wide duration-200 font-bold hover:text-blue-50">
           Welcome to WebCrafter
         </h1>
         {/* <p className="animate text-yellow-200 text-md md:w-1/2 lg:text-xl mb-0 md:mb-8 hover:scale-110 duration-300">

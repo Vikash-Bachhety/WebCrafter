@@ -59,14 +59,14 @@ function Header() {
           variant="contained"
           color="error"
           onClick={handleLogout}
-          className="animate flex justify-center text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6  md:h-10 rounded-md md:mr-10"
+          className="animate flex justify-center text-lg text-white md:text-md py-4 items-center md:mt-0 w-24 h-6  md:h-10 rounded-md md:mr-10"
         >
           Logout
         </Button>
       ) : (
         <button
           onClick={handleRegister}
-          className="animate flex justify-center bg-orange-500 hover:bg-orange-600 text-lg text-white md:text-md mt-10 py-4 items-center md:mt-0 w-24 h-6 md:h-10 rounded-md md:mr-4"
+          className="animate flex justify-center bg-orange-500 hover:bg-orange-600 text-lg text-white md:text-md mt-6 py-4 items-center md:mt-0 w-24 h-6 md:h-10 rounded-md md:mr-4"
         >
           Sign Up
         </button>

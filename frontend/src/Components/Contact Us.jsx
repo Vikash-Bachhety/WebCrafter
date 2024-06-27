@@ -40,7 +40,7 @@ function Contact() {
 
   return (
     <div className="bg-slate-950 flex justify-center bg-center border border-black w-full bg-cover h-screen sm:mt-4 relative z-10 left-0 font-serif tracking-wider">
-      <div className="animate w-3/4 h-2/3 mt-36 sm:w-2/3 lg:w-1/3 sm:h-3/4 bg-sky-700 flex justify-center items-center shadow-black shadow-xl rounded-lg sm:mt-24 md:mt-20">
+      <div className="animate w-3/4 h-2/3 mt-40 sm:w-2/3 lg:w-1/3 sm:h-3/4 bg-sky-700 flex justify-center items-center shadow-black shadow-xl rounded-lg sm:mt-24 md:mt-20">
         <form
           onSubmit={handleSubmit}
           className="mt-8 sm:mt-0 p-6 sm:px-8 xl:px-0 w-full max-w-md"
