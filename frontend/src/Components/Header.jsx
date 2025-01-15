@@ -33,7 +33,7 @@ function Header() {
   };
 
   return (
-    <div className="bg-blue-950 flex flex-col md:flex md:flex-row text-white min-w-full h-28 md:h-16 text-md md:text-xl font-normal md:tracking-wider font-sans items-center justify-between md:px-5 fixed top-0 left-0 z-20">
+    <div className="bg-black/70 flex flex-col md:flex md:flex-row text-white min-w-full h-28 md:h-16 text-md md:text-xl font-normal md:tracking-wider font-sans items-center justify-between md:px-5 fixed top-0 left-0 z-20">
       <Link
         to="/Home"
         className="bg-transparent flex flex-col w-12 h-12 md:w-40 md:h-40 md:mt-8 rounded-full relative z-10"
